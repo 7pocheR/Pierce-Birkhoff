@@ -1,5 +1,8 @@
 # A piecewise quadratic function without a polynomial lattice representation
 
+**Review status:** The proof is currently being checked by our human expert;
+that review has not yet been completed.
+
 This repository contains the mathematical manuscript and Lean 4 formalization
 of an explicit continuous function on the whole space of two independent
 six by six real matrices, identified with real coordinate space of dimension
