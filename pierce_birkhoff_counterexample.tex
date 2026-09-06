@@ -1,0 +1,373 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Mat}{M_6(\R)}
+\newcommand{\GL}{\mathrm{GL}_6(\R)}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\title{A piecewise quadratic function without a polynomial lattice representation}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct a continuous function on \(\R^{72}\) with a finite closed
+semialgebraic cover on which its labels are homogeneous quadratic
+polynomials, and prove that it has no finite lattice expression in
+real polynomials of arbitrary degrees. Positive homogeneity imposes
+a necessary finite condition on signs of linear and quadratic
+polynomials. Pairs of matrices with opposite determinant signs
+violate that condition. The construction concerns the unrestricted
+Pierce--Birkhoff assertion; its displayed partition uses a determinant
+of degree six.
+\end{abstract}
+
+A finite polynomial lattice expression is obtained from finitely many
+real polynomials by finitely many applications of maximum and minimum.
+By distributivity, such expressions are precisely finite maxima of
+finite minima of polynomials. A continuous function is piecewise
+polynomial here if a finite collection of closed semialgebraic sets
+covers its whole domain and the function agrees with a polynomial
+on each set.
+
+Identify \(\Mat\times\Mat\) with \(\R^{72}\), using independent matrix
+coordinates \(X,Y\). For \(1\le i\le6\) and signs
+\(\sigma=(\sigma_j)_{j\ne i}\in\{-1,1\}^5\), put
+\[
+ q_{i,\sigma}(X,Y)=(XY)_{ii}-\sum_{j\ne i}\sigma_j(XY)_{ij},
+ \qquad
+ h(X,Y)=\min_{i,\sigma}q_{i,\sigma}(X,Y).
+\]
+There are \(192\) homogeneous quadratic forms \(q_{i,\sigma}\), all
+with integer coefficients. Define
+\begin{equation}\label{eq:function}
+ f(X,Y)=
+ \begin{cases}
+ h(X,Y),&h(X,Y)>0\ \text{and}\ \det X>0,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+The function \(f:\R^{72}\to\R\) in \eqref{eq:function} is continuous
+and has a finite closed semialgebraic polynomial cover. It has no
+finite lattice expression in real polynomials, with no restriction
+on their degrees.
+\end{theorem}
+
+\section{The whole-space polynomial cover}
+
+Writing \(P=XY\), minimization over the row signs gives
+\[
+ h(X,Y)=\min_i\left(P_{ii}-\sum_{j\ne i}|P_{ij}|\right).
+\]
+If \(h>0\), then \(P\) has positive diagonal and is strictly diagonally
+dominant by rows. To see that it is invertible, suppose \(Pv=0\) with
+\(v\ne0\), and choose \(i\) maximizing \(|v_i|>0\). The row equation gives
+\[
+ P_{ii}|v_i|
+ \le \sum_{j\ne i}|P_{ij}|\,|v_j|
+ \le \left(\sum_{j\ne i}|P_{ij}|\right)|v_i|
+ <P_{ii}|v_i|,
+\]
+a contradiction. In particular, \(\det X\ne0\) on \(\{h>0\}\).
+
+On that open set the sign of \(\det X\) is locally constant, so \(f\)
+is continuous there. It is locally zero on \(\{h<0\}\). At \(h=0\),
+its value is zero and
+\[
+ 0\le f\le\max(h,0),
+\]
+which proves continuity at all remaining points, including singular
+\(X\) and \(Y\).
+
+Enumerate the quadratics as \(q_1,\ldots,q_{192}\), and define
+\[
+ F_0=\{\det X\le0\}\ \cup\ \bigcup_j\{q_j\le0\},
+\]
+\[
+ F_i=\{\det X\ge0,\ q_j\ge0\text{ for all }j,\
+                    q_i\le q_j\text{ for all }j\},
+ \qquad 1\le i\le192.
+\]
+These \(193\) closed semialgebraic sets cover the whole space. Use
+label \(0\) on \(F_0\) and label \(q_i\) on \(F_i\). On \(F_i\),
+the minimum \(h=q_i\) is nonnegative. If it is positive, invertibility
+and \(\det X\ge0\) give \(\det X>0\), so the label equals \(f\).
+On \(F_i\cap F_0\), either a \(q_j\) is zero or \(\det X=0\);
+in the latter case strict positivity of all \(q_j\) is impossible.
+Thus \(q_i=0\) on this overlap. On \(F_i\cap F_j\), both labels
+equal the common minimum. This verifies the asserted polynomial cover.
+
+For every \(t>0\), simultaneous scaling gives
+\begin{equation}\label{eq:homogeneous}
+ f(tX,tY)=t^2f(X,Y).
+\end{equation}
+Indeed, each \(q_{i,\sigma}\) scales by \(t^2\), whereas
+\(\det(tX)=t^6\det X\).
+
+\section{A necessary condition from positive homogeneity}
+
+\begin{lemma}\label{lem:sign}
+Let \(g:\R^N\to\R\) satisfy \(g(tz)=t^2g(z)\) for every \(t>0\).
+If \(g\) has a finite lattice expression in arbitrary real polynomials,
+there is a finite family of polynomials of degree at most two such
+that any two points sharing all signs in that family have the same
+sign of \(g\).
+\end{lemma}
+
+\begin{proof}
+Write \(g=\mathcal L(p_1,\ldots,p_m)\), where \(\mathcal L\) is a
+fixed finite expression using only maximum and minimum. Decompose
+each leaf into its homogeneous parts:
+\[
+ p_j=c_j+\ell_j+Q_j+\sum_{d\ge3}P_{j,d}.
+\]
+Here \(\ell_j\) has degree one and \(Q_j\) degree two; either can
+be zero. Let \(\mathcal T=\{\ell_j,Q_j:1\le j\le m\}\).
+
+For a fixed point \(z\), positive scaling commutes with the order
+operations, and hence for every \(t>0\),
+\[
+ g(z)=\mathcal L\left(\frac{p_1(tz)}{t^2},\ldots,
+                    \frac{p_m(tz)}{t^2}\right).
+\]
+Each entry has an extended-real limit \(u_j(z)\) as \(t\downarrow0\):
+\[
+ u_j(z)=
+ \begin{cases}
+ \sgn(c_j)\,\infty,&c_j\ne0,\\
+ \sgn(\ell_j(z))\,\infty,&c_j=0,\ \ell_j(z)\ne0,\\
+ Q_j(z),&c_j=0,\ \ell_j(z)=0.
+ \end{cases}
+\]
+Terms of degree at least three tend to zero after division by \(t^2\)
+at each fixed \(z\). Finite minimum and maximum are continuous on
+the extended real line. For example, conjugation by the increasing
+homeomorphism \((2/\pi)\arctan:[-\infty,\infty]\to[-1,1]\)
+reduces this to their ordinary continuity. No addition of infinities
+occurs. Therefore
+\begin{equation}\label{eq:limit}
+ g(z)=\mathcal L(u_1(z),\ldots,u_m(z)).
+\end{equation}
+
+Extend sign by \(\sgn(-\infty)=-1\) and \(\sgn(+\infty)=1\).
+Every nondecreasing map between totally ordered sets preserves
+minimum and maximum. Applying sign to the exact equality
+\eqref{eq:limit} gives
+\[
+ \sgn g(z)=\mathcal L(\sgn u_1(z),\ldots,\sgn u_m(z)).
+\]
+The inputs on the right are determined by the fixed constants \(c_j\)
+and the signs of \(\ell_j(z),Q_j(z)\). Thus equal joint signs for
+\(\mathcal T\) imply equal signs of \(g\).
+
+The limit is taken before sign is applied; sign is not interchanged
+with a limit at zero. Only pointwise convergence is used.
+\end{proof}
+
+\section{All quadratic equations on an orbit}
+
+Put
+\[
+ D=\diag(1,1,0,0,0,0),\qquad
+ E=\diag(0,0,1,1,0,0),
+\]
+and consider
+\[
+ \mathcal O=\{(UDV^{-1},VEU^{-1}):U,V\in\GL\}.
+\]
+Its pairs have ranks two and two, and satisfy \(XY=YX=0\).
+
+\begin{lemma}\label{lem:orbit}
+A real polynomial of total degree at most two vanishes on
+\(\mathcal O\) if and only if it is a constant real linear
+combination of the entries of \(XY\) and \(YX\).
+\end{lemma}
+
+\begin{proof}
+The reverse implication is immediate. For nonzero real \(a,b\),
+replace \(U\) by
+\[
+ U\diag(a,a,b^{-1},b^{-1},1,1)
+\]
+and keep \(V\) fixed. This replaces \((X,Y)\) by \((aX,bY)\).
+Consequently, separating coefficients in \(a,b\), each bihomogeneous
+component of a polynomial vanishing on \(\mathcal O\) vanishes
+separately.
+
+The \(X\)-projection and the \(Y\)-projection of \(\mathcal O\)
+are both the entire rank-two matrix locus, by independent changes
+of basis on the left and right. Its closure contains every rank-one
+matrix and zero. A homogeneous linear polynomial vanishing there
+is zero by evaluation at matrix units. For a homogeneous quadratic,
+these evaluations eliminate the squared-coordinate coefficients,
+and evaluation at sums of two distinct matrix units eliminates all
+mixed coefficients. Each such sum has rank at most two. The
+constant component is also zero. Thus only a bilinear polynomial
+\(B(X,Y)\) can remain.
+
+We next show that every nonzero rank-one pair
+\begin{equation}\label{eq:rankone}
+ X=uv^T,\qquad Y=st^T,\qquad t^Tu=0,\quad v^Ts=0
+\end{equation}
+lies in the Euclidean closure of \(\mathcal O\).
+Regard \(X\) as a map from a second vector space to a first, and
+\(Y\) in the reverse direction. In the first space choose a basis
+with first vector \(u\), a second vector on which \(t^T\) is one,
+and all other vectors in \(\ker(t^T)\). In the second space choose
+a first vector on which \(v^T\) is one, second vector \(s\), and
+all other vectors in \(\ker(v^T)\). The two zero-pairing conditions
+make these choices possible. In these bases \(X=E_{11}\) and
+\(Y=E_{22}\), where \(E_{ij}\) are matrix units.
+
+Let \(P\) interchange coordinates two and three. For \(\delta\ne0\),
+set
+\[
+ U_\delta=P\diag(1,\delta,1,\delta^{-1},1,1),\qquad V_\delta=P.
+\]
+Directly,
+\[
+ U_\delta D V_\delta^{-1}=E_{11}+\delta E_{33},\qquad
+ V_\delta E U_\delta^{-1}=E_{22}+\delta E_{44}.
+\]
+These tend to the normalized rank-one pair. Composing with the
+two fixed changes of basis proves the closure assertion. Hence
+\(B\) vanishes on all pairs \eqref{eq:rankone}; if one matrix is
+zero it vanishes by bilinearity.
+
+Write
+\[
+ B(X,Y)=\sum_{i,j,k,l}b_{ij,kl}X_{ij}Y_{kl},
+ \qquad
+ T(A,C)=\sum_{i,j,k,l}b_{ij,kl}A_{il}C_{kj}.
+\]
+The second expression defines a bilinear form on two matrix spaces,
+and
+\begin{equation}\label{eq:tensor}
+ B(uv^T,st^T)=T(ut^T,sv^T).
+\end{equation}
+The two arguments on the right range independently over all rank-one
+traceless matrices: their trace conditions are exactly
+\(t^Tu=0\) and \(v^Ts=0\). Such matrices span the entire traceless
+matrix space. They include all off-diagonal units, and
+\[
+ E_{ii}-E_{jj}
+ =(e_i+e_j)(e_i-e_j)^T+E_{ij}-E_{ji}
+\]
+supplies all diagonal differences. Bilinearity therefore shows that
+\(T\) vanishes on the product of the two full traceless spaces.
+
+Decomposing each argument into a traceless matrix plus its trace
+times \(I/6\) now gives
+\[
+ T(A,C)=\tr(A)L(C)+\tr(C)M(A),
+\]
+where one can take
+\[
+ L(C)=\frac{T(I,C)}6-\frac{\tr(C)T(I,I)}{36},
+ \qquad M(A)=\frac{T(A,I)}6.
+\]
+Substituting in \eqref{eq:tensor}, the first summand is \(L(YX)\),
+and the second is \(M(XY)\). The trace formula holds for all \(A,C\),
+so this gives
+\(B(X,Y)=L(YX)+M(XY)\) for arbitrary rank-one \(X,Y\), without
+requiring their products to vanish. Both sides are bilinear and
+rank-one matrices span the full matrix space. The identity therefore
+holds for all \(X,Y\), as required.
+\end{proof}
+
+\section{Pairs with identical signs for any finite quadratic family}
+
+\begin{lemma}\label{lem:pairs}
+For any finite family of real polynomials \(p_1,\ldots,p_M\)
+of degree at most two, there are two actual real matrix pairs
+\(z_+,z_-\) with identical signs for every \(p_j\), but
+\(f(z_+)>0\) and \(f(z_-)=0\).
+\end{lemma}
+
+\begin{proof}
+For each \(p_j\) not identically zero on \(\mathcal O\), the function
+\[
+ (U,V)\longmapsto p_j(UDV^{-1},VEU^{-1})
+\]
+is a nonzero rational function of the entries of \(U,V\).
+Multiplication by \((\det U\det V)^2\) clears its denominators
+and gives a nonzero polynomial numerator. The product of these
+finitely many nonzero numerators is nonzero; an empty product is one.
+
+A nonzero real polynomial cannot vanish on a nonempty Euclidean
+open set. Indeed, induction on the number of variables reduces
+vanishing on an open box to the univariate root bound by comparing
+coefficient polynomials. Choose an open neighborhood of \((I,I)\)
+where both determinants are positive. There are \(U,V\) in this
+neighborhood at which all the indicated numerators are nonzero.
+Thus every \(p_j\) not vanishing on \(\mathcal O\) is nonzero at
+the common point
+\[
+ o=(UDV^{-1},VEU^{-1}).
+\]
+
+Fix these \(U,V\). For \(\epsilon>0\) and \(\eta\in\{-1,1\}\), put
+\[
+ D_X^\eta=\diag(1,1,\epsilon^2,\epsilon^2,\epsilon,\eta\epsilon),
+ \qquad
+ D_Y^\eta=\diag(\epsilon^2,\epsilon^2,1,1,\epsilon,\eta\epsilon),
+\]
+\[
+ X_\eta=UD_X^\eta V^{-1},\qquad
+ Y_\eta=VD_Y^\eta U^{-1}.
+\]
+Both pairs tend to \(o\) as \(\epsilon\downarrow0\). Exact
+multiplication and determinants give
+\begin{equation}\label{eq:products}
+ X_\eta Y_\eta=Y_\eta X_\eta=\epsilon^2I,
+ \qquad
+ \det X_\eta=\frac{\det U}{\det V}\,\eta\epsilon^6.
+\end{equation}
+If \(p_j\) vanishes on \(\mathcal O\), Lemma~\ref{lem:orbit}
+and \eqref{eq:products} give exactly equal values on both pairs.
+If \(p_j(o)\ne0\), continuity gives the same strict sign on both
+pairs for all sufficiently small positive \(\epsilon\).
+There are finitely many such requirements, so a single positive
+real \(\epsilon\) makes every sign agree.
+
+All \(192\) forms \(q_{i,\sigma}\) equal \(\epsilon^2\) on both
+pairs. Since \(\det U/\det V>0\), their \(X\) determinants have
+opposite signs. Therefore
+\[
+ f(X_+,Y_+)=\epsilon^2>0,\qquad f(X_-,Y_-)=0.
+\]
+The choices are made in the order: the finite polynomial family,
+then \(U,V\), then \(\epsilon\). The function \(f\) is fixed throughout.
+\end{proof}
+
+\section{Conclusion}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Section~1 verifies continuity and the finite closed polynomial
+cover on all of \(\R^{72}\).
+If \(f\) had any finite polynomial lattice expression,
+positive homogeneity \eqref{eq:homogeneous} and Lemma~\ref{lem:sign}
+would make its sign determined by some finite family of
+degree-at-most-two polynomials. Lemma~\ref{lem:pairs} supplies
+two real points with identical signs for that family and different
+signs of \(f\), a contradiction.
+\end{proof}
+
+The displayed semialgebraic cover uses a determinant of degree six.
+The theorem does not assert that \(f\) has one shared polynomial
+label on each entire sign realization of some finite family of
+quadratic partition polynomials. That additional partition requirement
+is different from the unrestricted whole-space assertion disproved
+here.
+
+\end{document}
+
