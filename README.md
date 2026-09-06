@@ -28,8 +28,6 @@ with a finite closed semialgebraic polynomial cover, as in Conjecture 1.1
 and Definition 1.2 of [Wagner (2010)](https://www.numdam.org/item/10.5802/afst.1283.pdf).
 The degree bound applies to the polynomial labels, not to every polynomial
 defining the partition. The displayed cover also uses a degree-six determinant.
-The theorem does not establish a counterexample to the version restricted to
-quadratic partition inequalities.
 
 ## Reproducing the formal verification
 
