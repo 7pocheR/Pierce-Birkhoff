@@ -1,46 +1,64 @@
-# A piecewise quadratic function without a polynomial lattice representation
+# A seven-variable piecewise quadratic counterexample
 
 **Review status:** The proof is currently being checked by our human expert;
 that review has not yet been completed.
 
-This repository contains the mathematical manuscript and Lean 4 formalization
-of an explicit continuous function on the whole space of two independent
-six by six real matrices, identified with real coordinate space of dimension
-72. The function has a closed semialgebraic polynomial cover with 193 indexed
-regions and homogeneous quadratic labels, but has no finite maximum/minimum
-expression using real polynomials of arbitrary degrees.
+This branch contains an explicit continuous function on all of `ℝ⁷`, with
+six closed semialgebraic polynomial pieces: zero and five homogeneous
+quadratics. Its complete Lean statement excludes every finite maximum/minimum
+expression in real polynomials, with no restriction on their degrees,
+coefficients or number.
 
-- [PDF proof](pierce_birkhoff_counterexample.pdf)
-- [LaTeX source](pierce_birkhoff_counterexample.tex)
-- [Lean project and verification instructions](lean/README.md)
-- [Final formal statements](lean/PBCounterexample/Main.lean)
+- [Seven-variable manuscript](pb_counterexample7.pdf)
+- [LaTeX source](pb_counterexample7.tex)
+- [Finite exact certificate](verify_certificate7.py)
+- [Final formal statements](lean7/PBCounterexample/Gram7Main.lean)
+- [Lean project and verification instructions](lean7/README.md)
 
-The main Lean theorem is
-`PBCounterexample.pierce_birkhoff_counterexample`.
-`PBCounterexample.no_finite_max_min_representation` explicitly excludes every
-nonempty finite maximum of nonempty finite minima of unrestricted real
-multivariate polynomials.
+The seven coordinates parametrize a specified rational linear space of pairs
+`(A,B)`, where `A` is an unrestricted `3 × 3` matrix and `B` is a `2 × 3`
+matrix. Write `Q = AᵀA − BᵀB`, let `vᵢ = 4eᵢ − (1,1,1)` for `i < 3`,
+and let `v₃ = (−1,−1,−1)`. The five labels are `−vᵢᵀQvⱼ` for the edges
+`01, 02, 03, 12, 13`. If `h` is their minimum, the function is `h` where
+`h > 0` and `det A > 0`, and zero elsewhere. The manuscript specifies the
+coordinate matrix and proves all properties of this formula.
+
+The main closed existential theorem is
+`PBCounterexample.Gram7.pierce_birkhoff_fails_in_dimension_seven`.
+The same namespace contains `counterexample` for the specified function and
+`no_finite_max_min_representation` for the explicit finite max–min formulation.
 
 ## Scope
 
-The statement concerns the classical whole-space Pierce-Birkhoff conjecture
-with a finite closed semialgebraic polynomial cover, as in Conjecture 1.1
-and Definition 1.2 of [Wagner (2010)](https://www.numdam.org/item/10.5802/afst.1283.pdf).
-The degree bound applies to the polynomial labels, not to every polynomial
-defining the partition. The displayed cover also uses a degree-six determinant.
+The domain is the whole seven-dimensional real affine space, not a proper
+algebraic subset. The polynomial labels are quadratic; the displayed
+partition also uses the cubic polynomial `det A`. No claim of minimum
+possible dimension, or of a resolution of PB(3), is made.
 
-## Reproducing the formal verification
+The standalone `lean7` project contains only the 35 mathematical modules
+needed for this construction, together with an import wrapper and separate
+verification programs. It does not import or rebuild a higher-dimensional
+example. The earlier `lean` project and original manuscript are retained
+unchanged as legacy material. The collaborator's separate 30-dimensional
+construction is available on the [30d branch](https://github.com/7pocheR/Pierce-Birkhoff/tree/30d).
+
+## Reproducing the checks
 
 The Lean project pins Lean `v4.34.0-rc1` and mathlib commit
-`ffbfefaec67d01d561affd800125a281db8bb7f3`.
-Install the pinned toolchain through Elan, enter the `lean` directory, obtain
-the dependency artifacts with `lake exe cache get`, and run `bash verify.sh`.
-See the [Lean README](lean/README.md) for the exact checks, additional kernel
-replay, and their trust assumptions.
+`ffbfefaec67d01d561affd800125a281db8bb7f3`. After installing the pinned
+toolchain through Elan, enter `lean7`, obtain dependency artifacts with
+`lake exe cache get`, and run `bash verify.sh`. See the
+[verification instructions](lean7/README.md) for the precise scope.
 
-Formal verification concerns the exact Lean statements and uses Lean's
-standard classical foundations. It is distinct from journal peer review
-and from independent verification of the Lean implementation.
+The auxiliary arithmetic certificate can be run with
+`python3 -B verify_certificate7.py`; it requires NumPy. Its printed ranks
+are `7, 23, 5`, with nonzero minor residues `693, 349, 256` modulo `1009`.
+The complete formal proof does not depend on trusting this Python program.
+
+Formal verification concerns the exact Lean declarations and uses Lean's
+standard classical foundations. Source-level mathematical review, human
+peer review, and verification of Lean by an independent implementation are
+separate matters.
 
 ## AI assistance
 
