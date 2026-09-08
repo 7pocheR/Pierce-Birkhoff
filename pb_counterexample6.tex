@@ -1,0 +1,704 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.86in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{lmodern,microtype}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{2em}
+\title{A six-variable piecewise quadratic function\\
+without a polynomial max--min representation}
+\author{}
+\date{\small Draft for mathematical review}
+\begin{document}
+\maketitle
+\vspace{-1em}
+
+\section{Statement and the whole-space function}
+
+The construction in this note is a continuous piecewise quadratic function on
+all of \(\mathbb R^6\), with five polynomial labels including zero. It has no
+finite expression in arbitrary real polynomials using pointwise minimum and
+maximum. The number, coefficients and degrees of those hypothetical
+polynomials are unrestricted. This does not resolve \(\mathrm{PB}(3)\) and
+does not assert that six is the smallest counterexample dimension.
+
+Use coordinates \(w=(x,y,z,u,v,r)\) on \(W=\mathbb R^6\). On
+\(U=\mathbb R^5\), use the bilinear form
+
+\[
+\beta=\operatorname{diag}(1,1,3,-1,-1),
+\]
+
+which has signature \((3,2)\). Define the following matrix of three columns:
+
+\[
+C(w)=(c_0,c_1,c_2)=
+\begin{pmatrix}
+x&-v+r/2&-y\\
+y&z+u&x\\
+z&r/2&0\\
+u&-v/2+r&-v/2\\
+v&2z+u/2&u/2
+\end{pmatrix}.
+\tag{1}
+\]
+
+Let \(A\) be its first three rows, let \(B\) be its last two rows, and put
+
+\[
+Q=C^T\beta C=A^T\operatorname{diag}(1,1,3)A-B^TB,
+\qquad D=\det A.
+\tag{2}
+\]
+
+These definitions use all six independent coordinates. In particular,
+\(c_0\) is the projection onto the first five coordinates, and the map
+\(w\mapsto C(w)\) is injective.
+
+Direct multiplication gives
+
+\[
+Q=\begin{pmatrix}a&b&0\\b&d-a&e\\0&e&d\end{pmatrix},
+\quad a=Q_{00},\quad b=Q_{01},\quad d=Q_{22},\quad e=Q_{12}.
+\tag{3}
+\]
+
+Thus the two identities \(Q_{00}+Q_{11}-Q_{22}=0\) and \(Q_{02}=0\)
+hold on the whole space. Define four homogeneous quadratic polynomials by
+
+\[
+\begin{aligned}
+q_1&=-10b+2d+2e,\\
+q_2&=4a+2b-2d-2e,\\
+q_3&=-4a+2b+6d-10e,\\
+q_4&=-4a+2b+2d+2e.
+\end{aligned}
+\tag{4}
+\]
+
+Write \(h=\min(q_1,q_2,q_3,q_4)\). The fixed function is
+
+\[
+f(w)=
+\begin{cases}
+h(w),&h(w)>0\text{ and }D(w)>0,\\
+0,&\text{otherwise}.
+\end{cases}
+\tag{5}
+\]
+
+The positive diagonal coefficient 3 in (2) causes no restriction on the
+underlying real quadratic space: multiplying the third row of \(A\) by
+\(\sqrt3\) gives the usual form \(A^TA-B^TB\), with the same determinant
+sign. All coefficients in (1), (3), and (4) are rational.
+
+\section{Positive Gram margin, continuity, and a finite closed cover}
+
+Here is a matrix identity establishing that the strict inequalities in (4)
+imply \(Q\succ0\). Let \(\mathbf1=(1,1,1)^T\), and put
+
+\[
+a_i=4e_i-\mathbf1\quad(0\le i<3),\qquad a_3=-\mathbf1,
+\]
+
+\[
+u_i=(e_i+\mathbf1)/4\quad(0\le i<3),\qquad u_3=0.
+\]
+
+For all six pairs \(i<j\), set \(q_{ij}=-a_i^TQa_j\). The identities
+\(\sum a_i=0\) and \(\sum u_i a_i^T=I_3\) give
+
+\[
+Q=\sum_{i<j}q_{ij}(u_i-u_j)(u_i-u_j)^T.
+\tag{6}
+\]
+
+For example, this also follows by multiplying out: the matrix
+\((a_i^TQa_j)_{i,j=0}^3\) has zero row sums and off-diagonal entries
+\(-q_{ij}\), so its quadratic expression is the sum of the corresponding
+six squared differences.
+
+The four polynomials in (4) are respectively
+\(q_{01},q_{03},q_{12},q_{13}\). On the matrix space (3), the other two satisfy
+
+\[
+q_{02}=2q_{01}+6q_{03}+5q_{13},\qquad
+q_{23}=q_{01}+2q_{03}+2q_{13}.
+\tag{7}
+\]
+
+Consequently \(h>0\) makes all six coefficients in (6) strictly positive.
+The three vectors \(u_i-u_3\), \(i<3\), span \(\mathbb R^3\), so (6)
+implies \(Q\succ0\). If \(A\xi=0\) for a nonzero \(\xi\), (2) instead
+gives \(\xi^TQ\xi=-|B\xi|^2\le0\). We have proved
+
+\[
+h(w)>0\ \Longrightarrow\ Q(w)\succ0\ \Longrightarrow\ D(w)\ne0.
+\tag{8}
+\]
+
+The function (5) is therefore continuous on \(\{h>0\}\), since the
+determinant sign is locally constant there. It is zero on \(\{h<0\}\), and
+continuity at \(h=0\) follows from \(0\le f\le\max(h,0)\).
+
+An explicit closed semialgebraic cover of the whole space consists of
+
+\[
+F_0=\{D\le0\}\ \cup\ \bigcup_{i=1}^4\{q_i\le0\},
+\]
+
+with polynomial label zero, and
+
+\[
+F_i=\{D\ge0,\ q_j\ge0\ (1\le j\le4),\ q_i\le q_j\ (1\le j\le4)\},
+\qquad1\le i\le4,
+\tag{9}
+\]
+
+with label \(q_i\). If \(D=0\) and all four labels are nonnegative, (8)
+forces their minimum to be zero. This verifies the labels on every boundary
+overlap. The five sets in (9), including \(F_0\), cover all of \(W\).
+Furthermore
+
+\[
+f(\lambda w)=\lambda^2 f(w)\qquad(\lambda>0).
+\tag{10}
+\]
+
+For an additional direct check that the Gram-positive set is nonempty, at
+\(w=(2,8,0,-1,-7,-9)\) the Gram matrix is
+
+\[
+\begin{pmatrix}18&-12&0\\-12&75/2&-3\\0&-3&111/2\end{pmatrix},
+\]
+
+whose leading principal minors are \(18,531,58617/2\).
+
+\section{The polynomial Gram-zero curve and all its quadratic equations}
+
+Define the polynomial curve
+
+\[
+b(t)=\begin{pmatrix}
+t^4-6t^2+1\\
+4t^3-4t\\
+t^4+2t^2+1\\
+2t^4-2\\
+4t^3+4t\\
+2t^5+4t^3+2t
+\end{pmatrix},
+\qquad k(t)=(-t,1,1)^T,
+\qquad
+R_-=(0,1,-1)^T(0,1,-1).
+\tag{11}
+\]
+
+Write \(d_*(t)=12(1+t^2)^2\). The following are exact polynomial identities:
+
+\[
+Q(b(t))=0,\qquad C(b(t))k(t)=0,\qquad
+Q(b'(t))=d_*(t)R_-.
+\tag{12}
+\]
+
+In particular, the column relation is
+\(c_1(b(t))=t c_0(b(t))-c_2(b(t))\). Its coefficient of \(c_2\) is
+constantly \(-1\); this fact permits the rank-one target \(R_-\) throughout
+the curve.
+
+The coefficient matrix of the six entries of \(b(t)\), with rows indexed by
+degrees zero through five, is
+
+\[
+\begin{pmatrix}
+1&0&1&-2&0&0\\
+0&-4&0&0&4&2\\
+-6&0&2&0&0&0\\
+0&4&0&0&4&4\\
+1&0&1&2&0&0\\
+0&0&0&0&0&2
+\end{pmatrix}.
+\tag{13}
+\]
+
+Its determinant is \(2048=2^{11}\). Thus no nonzero real homogeneous
+linear polynomial vanishes identically on the curve. The curve, viewed at a
+transcendental ordered parameter, also has no such linear equation.
+
+Let \(I_2\) be the real vector space of homogeneous quadratics \(q\) in the
+six original variables satisfying \(q(b(t))\equiv0\). Let
+
+\[
+H_2=\{q\in I_2:q(b'(t))\equiv0\}.
+\]
+
+The exact spaces needed below are
+
+\[
+\dim I_2=10,\qquad
+H_2=\operatorname{span}_{\mathbb R}\{Q_{00},Q_{01},Q_{12}+Q_{22}\}.
+\tag{14}
+\]
+
+These statements concern every real homogeneous quadratic, including all
+the additional quadratics outside the Gram span. Here is a finite integer
+certificate of (14). Order the 21 monomials \(w_iw_j\) lexicographically by
+\(0\le i\le j<6\). Form the \(11\times21\) matrix \(M\) whose column
+\((i,j)\) contains the coefficients, in degrees zero through ten, of
+\(b_i(t)b_j(t)\). Form the \(9\times21\) matrix \(M'\) from the coefficients,
+in degrees zero through eight, of \(b'_i(t)b'_j(t)\), and put
+\(N=\binom{M}{M'}\). With all indices beginning at zero:
+
+\begin{itemize}
+\item The minor of \(M\) using all rows and columns
+  \(0,1,2,3,4,5,6,7,8,9,20\) has determinant \(2^{35}\).
+\item The minor of \(N\) using rows \(0,1,\ldots,17\) and columns
+  \(0,1,\ldots,16,20\) has determinant \(2^{69}\).
+\end{itemize}
+
+The first assertion also follows directly from (13): the coordinate
+polynomials span all polynomials of degree at most five, so their products
+span all polynomials of degree at most ten. Thus \(\operatorname{rank}M=11\)
+and \(\dim I_2=21-11=10\).
+
+By (12), all three displayed Gram polynomials in (14) lie in \(\ker N\).
+They are independent: their coefficients on monomials \(x^2,xz,xv\) form
+
+\[
+\begin{pmatrix}1&0&0\\0&0&-1\\1&1&0\end{pmatrix},
+\]
+
+with determinant one. Hence \(\operatorname{rank}N\le18\), while the second
+minor gives the reverse inequality. This proves (14) without assuming that
+the four Gram entries generate the full space of quadratic equations.
+
+\section{First and second variations inside the fixed six-dimensional space}
+
+For a homogeneous quadratic matrix map, write \(dQ_b(z)\) for its linear
+derivative at \(b\) in direction \(z\). In particular,
+
+\[
+Q(b+\varepsilon z)
+ =Q(b)+\varepsilon dQ_b(z)+\varepsilon^2Q(z)
+\tag{15}
+\]
+
+is an exact identity.
+
+Fix arbitrary real \(t\) and \(\rho>0\), and take the base
+\(b_*=\rho b(t)\). In this section all derivatives of the curve are
+evaluated at that fixed \(t\). Set
+
+\[
+n=-\frac{b''}{2\rho d_*},\qquad
+j_0=b'''-\frac{6t}{1+t^2}b''.
+\tag{16}
+\]
+
+Differentiating (12) twice gives
+\(dQ_{b(t)}(b'')=-2d_*R_-\). Differentiating a third time gives
+\(dQ_{b(t)}(b''')=-3d_*'R_-\). Since
+\(3d_*'/(2d_*)=6t/(1+t^2)\), it follows that
+
+\[
+dQ_{b_*}(n)=R_-,\qquad dQ_{b_*}(j_0)=0.
+\tag{17}
+\]
+
+For a symmetric matrix in the four-dimensional space (3), define
+
+\[
+\pi(R)=(R_{00},R_{01},R_{22}),\qquad
+\ell(R)=k^TRk.
+\tag{18}
+\]
+
+The maps \(\pi\) and \(\ell\) together identify that matrix space with
+\(\mathbb R^4\): explicitly,
+
+\[
+\ell(R)=(t^2-1)R_{00}-2tR_{01}+2R_{22}+2R_{12}.
+\tag{19}
+\]
+
+The equation \(C(b_*)k=0\) implies
+
+\[
+\ell(dQ_{b_*}(z))=0\qquad(z\in W).
+\tag{20}
+\]
+
+Let \(e_x,e_y,e_z\) be the first three standard coordinate vectors of
+\(W\), and let \(J_3\) have columns
+\(\pi(dQ_{b_*}(e_x)),\pi(dQ_{b_*}(e_y)),\pi(dQ_{b_*}(e_z))\).
+An exact derivative calculation gives
+
+\[
+\det J_3=12\rho^3(1+t^2)^6>0.
+\tag{21}
+\]
+
+In particular \(dQ_{b_*}\) has rank exactly three, its image is precisely
+\(\ker\ell\), and its three displayed columns give coordinates on that
+image. No generic rank hypothesis is being imposed on the chosen base.
+
+The following identities supply the determinant direction and the second
+variation missing from (20):
+
+\[
+\begin{aligned}
+\beta(C(n)k,C(n)k)&=0,\\
+\beta(C(n)k,C(j_0)k)&=0,\\
+\beta(C(j_0)k,C(j_0)k)&=1728,\\
+dD_{b_*}(n)&=0,\\
+dD_{b_*}(j_0)&=-48\rho^2(1+t^2)^4.
+\end{aligned}
+\tag{22}
+\]
+
+For the first two identities there is also a direct geometric explanation.
+Write \(v_0(t)=c_0(b(t))\). For
+\(K=\operatorname{diag}(J,0,J/2)\), with
+\(J=\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right)\), one has
+
+\[
+v_0'=\frac{4t v_0-4Kv_0}{1+t^2},\qquad C(b'')k=2v_0'.
+\tag{23}
+\]
+
+Thus \(C(n)k\) lies in the isotropic plane spanned by \(v_0,Kv_0\).
+These two vectors are independent: the third coordinate of \(v_0\) is
+\((1+t^2)^2>0\), the third coordinate of \(Kv_0\) is zero, and
+\(x(b(t))^2+y(b(t))^2=(1+t^2)^4>0\) makes \(Kv_0\ne0\).
+By (17), \(C(j_0)k\) is perpendicular to that plane. Its positive squared
+norm and the two determinant derivatives in (22) are the exact values
+given by (1) and (11).
+
+Fix once and for all the positive matrix
+
+\[
+R_0=\begin{pmatrix}1&1/4&0\\1/4&1&0\\0&0&2\end{pmatrix}.
+\tag{24}
+\]
+
+It satisfies (3), and
+
+\[
+s=\ell(R_0)=t^2-t/2+3=(t-1/4)^2+47/16>0.
+\]
+
+Normalize the determinant direction by
+
+\[
+j=-\sqrt{s/1728}\,j_0.
+\tag{25}
+\]
+
+Equations (17) and (22) now give
+
+\[
+\begin{aligned}
+dQ_{b_*}(j)&=0,&dD_{b_*}(j)&>0,\\
+\ell(Q(n\pm\delta j))&=\delta^2s
+&&\text{for every real }\delta.
+\end{aligned}
+\tag{26}
+\]
+
+In particular, the two signs in (26) have exactly the same required second
+variation, even when the coefficient \(\delta\) is chosen arbitrarily small.
+
+\section{Corrected paths with exactly the same singularly scaled Gram target}
+
+Fix \(t,\rho\) as above and then fix any \(\delta>0\). Put
+\(y_\pm=n\pm\delta j\). The four-dimensional space
+
+\[
+E=\operatorname{span}(e_x,e_y,e_z,j)
+\]
+
+has the displayed basis: its first three vectors map independently under
+\(dQ_{b_*}\), while \(j\) maps to zero and has a nonzero determinant
+derivative.
+
+For \(z\in E\), consider the following four real equations:
+
+\[
+\Phi_\pm(\varepsilon,z)=
+\begin{pmatrix}
+\pi\bigl(dQ_{b_*}(z)+\varepsilon[Q(y_\pm+z)-\delta^2R_0]\bigr)\\
+\ell\bigl(Q(y_\pm+z)-\delta^2R_0\bigr)
+\end{pmatrix}=0.
+\tag{27}
+\]
+
+At \((\varepsilon,z)=(0,0)\), these equations hold by (26). In the displayed
+basis of \(E\), their derivative with respect to \(z\) has the block form
+
+\[
+\begin{pmatrix}
+J_3&0\\
+*&\pm2\delta s
+\end{pmatrix}.
+\tag{28}
+\]
+
+Indeed the derivative of the last component in direction \(j\) is
+
+\[
+2\beta(C(n\pm\delta j)k,C(j)k)=\pm2\delta s
+\]
+
+by (22) and (25). Thus the determinant of (28) is
+
+\[
+\pm24\rho^3(1+t^2)^6\delta s\ne0.
+\tag{29}
+\]
+
+The ordinary real implicit function theorem supplies smooth solutions
+\(z_\pm(\varepsilon)\in E\), with \(z_\pm(0)=0\), on an interval about
+zero. These are actual local real paths, not merely formal expansions.
+Define points of the fixed whole space by
+
+\[
+w_\pm(\varepsilon)=b_*+
+\varepsilon\bigl(n\pm\delta j+z_\pm(\varepsilon)\bigr).
+\tag{30}
+\]
+
+Equations (15), (17), (20), and (27) imply the exact identities
+
+\[
+Q(w_\pm(\varepsilon))
+ =\varepsilon R_-+\varepsilon^2\delta^2R_0.
+\tag{31}
+\]
+
+For clarity, the first three components of (27) make the \(\pi\)-values on
+the two sides of (31) equal. The fourth component makes their \(\ell\)-values
+equal, using (20) and \(\ell(R_-)=0\). Formula (19) then gives equality of
+every Gram entry. There is no omitted equation to impose.
+
+Also, (22), (25), and smoothness give
+
+\[
+D(w_\pm(\varepsilon))
+ =\pm\varepsilon\delta\,dD_{b_*}(j)+O(\varepsilon^2).
+\tag{32}
+\]
+
+For every sufficiently small positive \(\varepsilon\), their determinant
+signs are therefore respectively positive and negative.
+
+The four labels in (4), evaluated on \(R_-\), are \((0,0,16,0)\), and on
+\(R_0\) they are \((3/2,1/2,17/2,1/2)\). Hence (31) gives
+
+\[
+h(w_+(\varepsilon))=h(w_-(\varepsilon))
+  =\tfrac12\varepsilon^2\delta^2>0
+\]
+
+for every positive \(\varepsilon\) for which the paths are defined. Thus,
+for sufficiently small positive \(\varepsilon\),
+
+\[
+f(w_+(\varepsilon))=\tfrac12\varepsilon^2\delta^2>0,
+\qquad f(w_-(\varepsilon))=0.
+\tag{33}
+\]
+
+The normalized target \(Q/\varepsilon\) converges to the rank-one matrix
+\(R_-\). The two small eigenvalues of the unnormalized matrix \(Q\) have scale
+\(\varepsilon^2\delta^2\). No estimate uniform only near a fixed positive
+definite normalized target is used in (27)--(33).
+
+\section{Simultaneous agreement for every finite family of quadratic tests}
+
+Here is the exact finite-family statement:
+
+\begin{quote}
+For the fixed whole-space function (5), every finite family of real
+polynomials of degree at most two has two points of \(W\) on which all its
+members have identical signs, while \(f\) is positive at one point and
+zero at the other.
+\end{quote}
+
+Fix an arbitrary such family \(\mathcal T\). For a member
+\(p=c+\lambda+q\), with homogeneous components of degrees zero, one and two,
+consider
+
+\[
+p(\rho b(t))=c+\rho\lambda(b(t))+\rho^2q(b(t)).
+\tag{34}
+\]
+
+If this polynomial in \((\rho,t)\) were identically zero, comparison of
+powers of \(\rho\), followed by (13), would give
+\(c=0,\lambda=0,q\in I_2\). Thus, for each member of
+\(\mathcal T\setminus I_2\), at least one coefficient in \(t\) in (34)
+is a nonzero polynomial in \(\rho\). Choose one \(\rho>0\) avoiding the
+finitely many roots of these finitely many coefficient polynomials. For
+this fixed \(\rho\), every corresponding polynomial (34) is nonzero as a
+polynomial in \(t\).
+
+For each \(q\in\mathcal T\cap(I_2\setminus H_2)\), (14) says that
+\(q(b'(t))\) is a nonzero polynomial in \(t\). Choose a single real \(t\)
+avoiding its roots for all these members, and avoiding the roots of all the
+nonzero polynomials (34). Both choices can be made in any prescribed open
+intervals of positive \(\rho\) and real \(t\). With \(b_*=\rho b(t)\),
+we now have
+
+\[
+\begin{aligned}
+p(b_*)&\ne0&& (p\in\mathcal T\setminus I_2),\\
+q(b')&\ne0&& (q\in\mathcal T\cap(I_2\setminus H_2)).
+\end{aligned}
+\tag{35}
+\]
+
+For a homogeneous quadratic \(q\in I_2\), twice differentiating
+\(q(b(t))=0\) gives \(dq_b(b'')=-2q(b')\). The definition of \(n\) in
+(16), with the scaling \(b_*=\rho b\), therefore gives
+
+\[
+dq_{b_*}(n)=\frac{q(b')}{d_*}.
+\tag{36}
+\]
+
+For every member in the second line of (35), this is nonzero. Choose one
+\(\delta>0\) sufficiently small that
+
+\[
+\delta\,|dq_{b_*}(j)|
+ <\tfrac12|dq_{b_*}(n)|
+\tag{37}
+\]
+
+for each of those finitely many members. If the family of constraints is
+empty, any positive \(\delta\) may be used. Fix this \(\delta\), and then
+construct the two actual paths in Section 5.
+
+For \(q\in\mathcal T\cap(I_2\setminus H_2)\), their expansions are
+
+\[
+q(w_\pm(\varepsilon))
+ =\varepsilon\bigl(dq_{b_*}(n)\pm\delta dq_{b_*}(j)\bigr)
+   +O(\varepsilon^2).
+\tag{38}
+\]
+
+By (37), the two leading coefficients have the same nonzero sign. Hence the
+two values in (38) have the same nonzero sign for sufficiently small
+positive \(\varepsilon\). For \(p\in\mathcal T\setminus I_2\), the same
+conclusion follows from \(p(b_*)\ne0\) and continuity.
+
+Finally, every \(q\in\mathcal T\cap H_2\) is an actual constant linear
+combination of the three Gram entries in (14). Its values on the two paths
+are exactly equal by (31), including when that common value is zero. This
+handles all extra quadratic equations, not just one selected separator.
+
+Take a single sufficiently small positive \(\varepsilon\) for all these
+finitely many conditions, for both implicit solutions, and for (32). All
+members of \(\mathcal T\) then have identical signs at the two points,
+whereas (33) gives different signs of \(f\). The quantifier order is:
+
+\[
+\text{fixed }W,f;\quad
+\mathcal T;\quad\rho;\quad t;\quad\delta>0;\quad
+\text{the two implicit solutions};\quad\varepsilon>0.
+\tag{39}
+\]
+
+Neither the function nor its vector space depends on \(\mathcal T\).
+
+\section{Excluding polynomial leaves of arbitrary degrees}
+
+The degree-two tests in Section 6 do not impose a degree bound on the
+polynomials in a proposed lattice expression. The following limiting
+argument removes all such bounds.
+
+Suppose a positively homogeneous degree-two function \(g\) on a real vector
+space has an expression
+
+\[
+g=\mathcal L(p_1,\ldots,p_m),
+\tag{40}
+\]
+
+where \(\mathcal L\) is a finite nonempty expression using minimum and
+maximum, and each \(p_i\) is any real polynomial. Write
+
+\[
+p_i=c_i+\lambda_i+q_i+\text{terms of degrees at least three},
+\]
+
+allowing zero components. At each fixed point \(w\), the limit of
+\(\tau^{-2}p_i(\tau w)\), as \(\tau\to0^+\), exists in the extended real
+line and is
+
+\[
+L_i(w)=
+\begin{cases}
+\operatorname{sgn}(c_i)\,\infty,&c_i\ne0,\\
+\operatorname{sgn}(\lambda_i(w))\,\infty,
+     &c_i=0,\ \lambda_i(w)\ne0,\\
+q_i(w),&c_i=0,\ \lambda_i(w)=0.
+\end{cases}
+\tag{41}
+\]
+
+Positive scalar multiplication commutes with minimum and maximum. Thus
+homogeneity makes (40), after scaling, equal to
+\(g(w)=\mathcal L(\tau^{-2}p_1(\tau w),\ldots,\tau^{-2}p_m(\tau w))\)
+for every \(\tau>0\). Finite minimum and maximum are continuous on the
+extended real line; passing to the limits gives
+
+\[
+g(w)=\mathcal L(L_1(w),\ldots,L_m(w)).
+\tag{42}
+\]
+
+The sign function from the extended real line to the ordered set
+\(\{-1,0,1\}\) commutes with minimum and maximum. By (41)--(42), the sign
+of \(g(w)\) is therefore determined by the signs of the finite family of
+linear and homogeneous quadratic polynomials
+
+\[
+\{\lambda_i,q_i:1\le i\le m\},
+\tag{43}
+\]
+
+together with the fixed constants \(c_i\). This conclusion also covers
+vanishing linear or quadratic components and infinite intermediate limits.
+
+Apply the argument to the fixed function \(f\), using (10). Section 6
+applied to (43) gives two points on which all those signs agree and the sign
+of \(f\) differs. This contradicts (42). Hence (5) has no polynomial lattice
+expression with arbitrary finite polynomial leaves.
+
+This is a direct unrestricted-degree nonrepresentation proof. It does not
+replace the full separating ideal by a chosen ideal of interface equations,
+and it does not claim that a finite family of all possible polynomial tests
+can fail to distinguish the two points. Higher-degree test polynomials,
+including the determinant itself, may distinguish them; (41)--(43) explain
+why that fact cannot produce a lattice representation of this degree-two
+homogeneous function.
+
+\section{Exact algebraic checks and scope}
+
+The companion file
+\texttt{verify\_certificate6.py} checks (1)--(4), the two
+simplex relations, the reconstruction identity, the rational positive Gram
+point, all curve and derivative identities, the specified integer minors,
+the full quadratic kernel in (14), (21)--(22), and the derivative factors in
+(28). Its arithmetic uses symbolic rational numbers and integer polynomial
+coefficients; no floating-point rank, sampled sign test, or finite degree
+cutoff on polynomial leaves is used.
+
+The continuous whole-space selection, the closed cover, the real implicit
+solutions, the finite-family choice of parameters, and the limiting argument
+are the proofs in Sections 2, 5, 6, and 7. The result is a six-dimensional
+counterexample with homogeneous quadratic labels. It is not a positive or
+negative resolution of \(\mathrm{PB}(3)\) or a theorem of global minimality.
+
+\end{document}
