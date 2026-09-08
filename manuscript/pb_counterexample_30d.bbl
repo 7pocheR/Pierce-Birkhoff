@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}
+
+\bibitem{BP}
+G.~Birkhoff and R.~S. Pierce.
+\newblock Lattice-ordered rings.
+\newblock {\em An. Acad. Brasil. Ci.}, 28:41--69, 1956.
+
+\bibitem{Chui}
+C.~K. Chui.
+\newblock {\em Multivariate splines}, volume~54 of {\em CBMS-NSF Regional
+  Conference Series in Applied Mathematics}.
+\newblock Society for Industrial and Applied Mathematics, Philadelphia, PA,
+  1988.
+
+\bibitem{dipasquale2017}
+M.~DiPasquale, F.~Sottile, and L.~Sun.
+\newblock Semialgebraic splines.
+\newblock {\em Comput. Aided Geom. Design}, 55:29--47, 2017.
+
+\bibitem{HI}
+M.~Henriksen and J.~R. Isbell.
+\newblock Lattice-ordered rings and function rings.
+\newblock {\em Pacific J. Math.}, 12:533--565, 1962.
+
+\bibitem{LL}
+Z.~Lai and L.-H. Lim.
+\newblock Pierce-birkhoff conjecture is true for splines.
+\newblock {\em arXiv:2507.07976}, 2025.
+
+\bibitem{lai2024}
+Z.~Lai, L.-H. Lim, and Y.~Liu.
+\newblock Attention is a smoothed cubic spline.
+\newblock {\em arXiv:2408.09624}, 2024.
+
+\bibitem{Mahe1984}
+L.~Mah\'e.
+\newblock On the {P}ierce--{B}irkhoff conjecture.
+\newblock {\em Rocky Mountain J. Math.}, 14(4):983--985, 1984.
+
+\end{thebibliography}

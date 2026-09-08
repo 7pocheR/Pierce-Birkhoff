@@ -1,4 +1,6 @@
-# A counterexample to the Pierce-Birkhoff conjecture
+# Pierce–Birkhoff conjecture is false
+
+Zehua Lai, Lek-Heng Lim, Junyu Ren
 
 The Pierce-Birkhoff conjecture is a classical, longstanding problem in real
 algebraic geometry, with roots in Birkhoff and Pierce's 1956 work on
@@ -13,6 +15,41 @@ proposed representation.
 undergone careful human expert checking. We present this version because its
 proof is conceptually simple and readily checked by hand.
 
+## Manuscripts and formalizations
+
+- **30 dimensions, main paper:** [PDF](pb_counterexample_30d.pdf),
+  [LaTeX source](manuscript/pb_counterexample_30d.tex),
+  [Lean project and verification instructions](lean/README.md).
+- **5 dimensions, piecewise cubic:** [PDF](pb_counterexample5.pdf),
+  [LaTeX source](pb_counterexample5.tex),
+  [Lean project](lean5/README.md),
+  [recorded formal verification](lean5/verification/RECORD.md).
+- **6 dimensions, piecewise quadratic:** [PDF](pb_counterexample6.pdf),
+  [LaTeX source](pb_counterexample6.tex), [Lean project](lean6/README.md).
+- **7 dimensions, piecewise quadratic:** [PDF](pb_counterexample7.pdf),
+  [LaTeX source](pb_counterexample7.tex), [Lean project](lean7/README.md).
+- **72 dimensions, original construction:**
+  [PDF](pierce_birkhoff_counterexample.pdf),
+  [LaTeX source](pierce_birkhoff_counterexample.tex),
+  [final Lean statements](lean/PBCounterexample/Main.lean).
+
+All five examples have Lean formalizations. Human expert review of the
+5-, 6-, and 7-dimensional proofs is ongoing. The 30-dimensional paper is
+the version that has undergone careful human expert checking.
+
+The `lean`, `lean5`, `lean6`, and `lean7` directories are separate Lean
+projects; run each project's checks from its own directory. The
+[5d](https://github.com/7pocheR/Pierce-Birkhoff/tree/5d),
+[6d](https://github.com/7pocheR/Pierce-Birkhoff/tree/6d),
+[7d](https://github.com/7pocheR/Pierce-Birkhoff/tree/7d), and
+[72d](https://github.com/7pocheR/Pierce-Birkhoff/tree/72d) branches retain
+their published versions.
+
+To compile the main paper, run `latexmk -pdf pb_counterexample_30d.tex`
+from the `manuscript` directory. Its bibliography and figure are included.
+
+## The 30-dimensional construction
+
 The main construction is an explicit function on the whole space
 `Sym₅(ℝ) × Sym₅(ℝ)`, identified with `ℝ³⁰` by the thirty independent
 upper-triangular entries of two symmetric real matrices. Its formal statement
@@ -20,10 +57,8 @@ asserts continuity, a cover by 41 closed semialgebraic sets with homogeneous
 quadratic polynomial labels, and no finite maximum/minimum expression using
 real polynomials of arbitrary degrees.
 
-- [30-dimensional manuscript](pb_counterexample_30d.pdf)
 - [Exact function and its forty labels](lean/PBCounterexample/Collaborator30Function.lean)
 - [Final 30-dimensional statements](lean/PBCounterexample/Collaborator30Main.lean)
-- [Lean project and verification instructions](lean/README.md)
 
 The formula is the one in the linked 30-dimensional PDF. Put `P = XY` and
 take the forty labels `qᵢⱼ,τ = Pᵢᵢ + 4τPᵢⱼ`, for all ordered pairs `i ≠ j`
@@ -66,7 +101,7 @@ It concerns two unrestricted six by six matrices, 193 closed pieces, and a
 degree-six determinant in the partition. These files do not describe the new
 30-dimensional formula.
 
-## Reproducing the formal checks
+## Reproducing the 30- and 72-dimensional formal checks
 
 The Lean project pins Lean `v4.34.0-rc1` and mathlib commit
 `ffbfefaec67d01d561affd800125a281db8bb7f3`.
@@ -90,7 +125,10 @@ independent kernel implementation are separate matters.
 
 ## AI assistance
 
-GPT-6 and Claude 5.1 assisted in the development and review of this work.
+This work used GPT and Claude models in our multi-agent, multi-model setup.
+Agents exchanged constructions, proof attempts, objections, and corrections,
+with roles assigned dynamically across model families. Section 5 of the
+[main paper](pb_counterexample_30d.pdf) describes the setup and human input.
 
 ## References
 

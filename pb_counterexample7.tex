@@ -1,0 +1,442 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.88in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{lmodern,microtype,graphicx,xcolor,listings}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\Ical}{\mathcal I_2}
+\newcommand{\transpose}{^{\mathsf T}}
+\DeclareMathOperator{\diag}{diag}
+\setlength{\emergencystretch}{2em}
+\lstset{language=Python,basicstyle=\ttfamily\scriptsize,
+  columns=fullflexible,keepspaces=true,breaklines=true,
+  showstringspaces=false,numbers=left,numberstyle=\tiny\color{gray},
+  numbersep=8pt,frame=single,rulecolor=\color{black!20},
+  xleftmargin=15pt,framexleftmargin=3pt,aboveskip=12pt,belowskip=12pt}
+\title{A seven-variable piecewise quadratic function\protect\\
+without a polynomial max--min representation}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2em}
+\begin{abstract}
+An explicit rational linear subspace of pairs of matrices identifies a
+continuous piecewise quadratic function on all of $\R^7$. The function has
+six polynomial labels, including zero, and admits no finite expression
+using maximum and minimum of real polynomials of arbitrary degrees.
+The proof constructs, for every finite family of quadratic tests, two
+points with the same test signs but different function signs. A finite
+exact coefficient calculation and two applications of the real implicit
+function theorem establish the required points. The coefficient calculation
+is specified and its executable verifier is included. No minimality of
+the dimension is asserted.
+\end{abstract}
+
+\section{Statement and the explicit function}
+A function on $\R^n$ is piecewise polynomial here if a finite closed
+semialgebraic cover carries polynomial formulas for it. A polynomial
+lattice expression is a finite nonempty expression in real polynomials
+using pointwise minimum and maximum. Distributivity puts such an expression
+in finite maximum-of-minima form. Neither polynomial degrees nor the number
+or real coefficients of the auxiliary polynomials are restricted.
+
+\begin{theorem}\label{thm:main}
+The function defined below is continuous and piecewise quadratic on all
+of $\R^7$, with six distinct polynomial labels and a six-set closed
+semialgebraic cover. It is not a polynomial lattice expression.
+\end{theorem}
+
+Let $A\in\R^{3\times3}$ and $B\in\R^{2\times3}$, with no symmetry
+restriction on $A$. Number the ambient coordinates from zero, in row-major
+order:
+\[
+w=(A_{00},A_{01},A_{02},A_{10},A_{11},A_{12},A_{20},A_{21},A_{22},
+ B_{00},B_{01},B_{02},B_{10},B_{11},B_{12}).
+\]
+Reorder these as
+\[
+ P=(w_0,w_3,w_6,w_1,w_4,w_7,w_{11},w_{14}),\qquad
+ N=(w_2,w_5,w_8,w_9,w_{12},w_{10},w_{13}).
+\]
+Define $T=M/630$, where
+\begin{equation}\label{eq:M}
+M=\begin{pmatrix}
+-210&-210&-210&420&210&0&-210\\
+326&-490&59&80&-185&3&80\\
+-276&-210&66&-270&-150&-228&-270\\
+266&-70&-91&-280&385&63&-280\\
+-210&-210&-210&-210&210&0&420\\
+-230&-140&370&-50&50&300&-50\\
+36&0&279&90&225&153&90\\
+-36&0&-279&-90&-225&477&-90
+\end{pmatrix}.
+\end{equation}
+The vector space $W=\{P=TN\}$ is explicitly identified with $\R^7$ by
+the \emph{unscaled} coordinates $z=N$. Thus every entry of $A(z),B(z)$
+is a specified rational linear polynomial. Put
+\[
+ Q=A\transpose A-B\transpose B,\qquad H=\diag(1,1,-1).
+\]
+Direct rational multiplication gives $T\transpose T=I_7$. Since
+$\tr(HQ)=|P|^2-|N|^2$, it follows that
+\begin{equation}\label{eq:trace}
+ Q_{00}+Q_{11}-Q_{22}=0\quad\hbox{on }W.
+\end{equation}
+
+Set $v_i=4e_i-\mathbf1$ for $0\leq i<3$, and $v_3=-\mathbf1$, where
+$\mathbf1=(1,1,1)\transpose$. Define
+\[
+ q_{ij}=-v_i\transpose Qv_j\quad(i<j),\qquad
+ E=\{01,02,03,12,13\},\qquad h=\min_{e\in E}q_e.
+\]
+The function of the theorem is
+\begin{equation}\label{eq:f}
+ f(z)=\begin{cases}h(z),&h(z)>0\text{ and }\det A(z)>0,\\
+                    0,&\text{otherwise}.
+       \end{cases}
+\end{equation}
+This definition applies to every $z\in\R^7$.
+
+\subsection{Positivity, continuity, and the closed cover}
+Let $u_i=(e_i+\mathbf1)/4$ for $i<3$ and $u_3=0$.
+The matrix $(v_i\transpose Qv_j)_{i,j=0}^3$ has zero row sums,
+off-diagonal entries $-q_{ij}$, and $\sum_i u_iv_i\transpose=I_3$.
+Consequently
+\begin{equation}\label{eq:simplex}
+ Q=\sum_{i<j}q_{ij}(u_i-u_j)(u_i-u_j)\transpose.
+\end{equation}
+Taking $H$-traces and using \eqref{eq:trace} gives
+\begin{equation}\label{eq:labelrelation}
+ q_{23}=q_{01}+2q_{03}+2q_{13}.
+\end{equation}
+If $h>0$, all six coefficients in \eqref{eq:simplex} are positive.
+The vectors $u_0,u_1,u_2$ span $\R^3$, so $Q$ is positive definite.
+Then $A$ is invertible: $Av=0$ would imply
+$v\transpose Qv=-|Bv|^2\leq0$. Thus $\det A$ has locally constant
+sign wherever $h>0$. The function is continuous there and on $\{h<0\}$;
+at $h=0$ continuity follows from $0\leq f\leq\max(h,0)$.
+Also
+\begin{equation}\label{eq:homog}
+ f(rz)=r^2f(z)\qquad(r>0).
+\end{equation}
+
+For the asserted cover, take
+\[
+ F_0=\{\det A\leq0\}\ \cup\!\bigcup_{e\in E}\{q_e\leq0\}
+\]
+with label zero and, for each $e\in E$, take
+\[
+ F_e=\{\det A\geq0,\ q_b\geq0\ (b\in E),\ q_e\leq q_b\ (b\in E)\}
+\]
+with label $q_e$. These sets are closed and semialgebraic and cover $W$.
+If $\det A=0$ and all five $q_e$ are nonnegative, their minimum is zero
+by the preceding positivity argument. This checks the formula on every
+boundary overlap. Distinctness of the five nonzero labels will also follow
+from the rank calculation below.
+
+\section{A real curve and its finite coefficient calculation}
+It is convenient to specify the linear constraint map by
+\[
+ (Lw)_i=s_i\bigl(P_i-(TN)_i\bigr),\qquad
+ s=(3,630,105,90,3,63,70,70).
+\]
+Its entries are integers and $\ker L=W$. The full matrix appears in
+the verifier in Appendix~\ref{app:verifier}.
+The base point is
+\begin{equation}\label{eq:base}
+ A_0=\diag(1,-1,0),\qquad
+ B_0=\begin{pmatrix}1&0&0\\0&-1&0\end{pmatrix}.
+\end{equation}
+It lies in $W$, and its $N$-coordinates are $(0,0,0,1,0,0,-1)$.
+
+For $k=(k_0,k_1,k_2)$ define
+\[
+ d=1+|k|^2,\qquad
+ R_k=(1-|k|^2)I_3+2kk\transpose+2[k]_\times,
+ \qquad [k]_\times v=k\times v.
+\]
+Direct multiplication gives $R_k\transpose R_k=d^2I_3$ and
+$\det R_k=d^3$. For the latter identity one can also square the
+determinant and use its nonvanishing and its positive sign at $k=0$.
+Thus $O_k=R_k/d\in SO(3)$. For $C\in\R^{2\times2}$ set
+\begin{equation}\label{eq:chart}
+ V=\begin{pmatrix}1&0&t_0\\0&1&t_1\end{pmatrix},\qquad
+ \Phi_A=R_k[:,0\!:\!2]CV,\qquad \Phi_B=dCV.
+\end{equation}
+Here $R_k[:,0\!:\!2]$ denotes the first two columns. The chart is
+polynomial in nine parameters and satisfies
+$\Phi_A\transpose\Phi_A=\Phi_B\transpose\Phi_B$ identically.
+If $C$ is invertible, both matrices have rank two, and
+$\Phi_A=O_k[\Phi_B;0]$.
+
+Fix $C_{00}=1$, put $C_{11}=-1+t$, and regard
+$u=(k_0,k_1,k_2,t_0,t_1,C_{01},C_{10})$ as seven unknowns.
+Let $F(t,u)$ consist of rows 1 through 7 of $L\Phi$, with row numbering
+starting at zero. Then $F(0,0)=0$ and
+\begin{equation}\label{eq:J}
+ J=D_uF(0,0)=\begin{pmatrix}
+0&0&1260&-326&-490&-3&815\\
+0&-210&0&46&-35&38&25\\
+0&0&180&-38&-10&81&-55\\
+0&0&0&1&-1&0&-1\\
+-126&0&0&23&-14&-30&-5\\
+0&0&0&66&0&-17&-25\\
+0&0&0&4&-70&-53&25
+\end{pmatrix},
+\end{equation}
+with
+\begin{equation}\label{eq:D}
+ D=\det J=16383079440000\ne0.
+\end{equation}
+The real implicit function theorem supplies a smooth $u(t)$ near zero
+with $u(0)=0$ and $F(t,u(t))=0$.
+
+The omitted equation must be recovered. The active seven equations imply
+$P=TN+\ell e_0$. On the Gram-zero chart,
+\begin{equation}\label{eq:omitted}
+ 0=\tr(HQ)=\ell\bigl(2(TN)_0+\ell\bigr).
+\end{equation}
+The second factor is 2 at \eqref{eq:base} and remains nonzero near it.
+Hence $\ell=0$. Write $b(t)=\Phi(t,u(t))$, as a curve in $W$ or in its
+seven coordinates. It has Gram matrix zero and rank-two matrices for
+all sufficiently small $t$.
+
+\subsection{The specified finite calculation}
+Over $\Q$, recursively define
+$u_{22}(t)=\sum_{j=1}^{22}u_jt^j$ by
+\begin{equation}\label{eq:recursion}
+ u_j=-J^{-1}[t^j]\,F\!\left(t,\sum_{a<j}u_at^a\right).
+\end{equation}
+An unknown coefficient of order $j$ enters the order-$j$ equation only
+through $J$. Thus $F(t,u_{22}(t))$ is divisible by $t^{23}$, and all
+coefficients of $u_{22}$ belong to $\Z[1/D]$.
+Substitute this polynomial in \eqref{eq:chart}. Let $C_1$ be the
+$23\times7$ matrix of the $N$-coordinate coefficients of orders 0 through
+22, and let $C_2$ be the $23\times28$ matrix for their products $N_iN_j$,
+ordered lexicographically for $0\leq i\leq j<7$.
+Let $G_2$ be the $6\times28$ matrix of the Gram entries, in the order
+$00,01,02,11,12,22$, as quadratic polynomials in $N$.
+
+The following are determinants of fixed minors, with zero-based indices,
+reduced modulo the prime 1009:
+\begin{align}
+ \det C_1[0\!:\!7,\,0\!:\!7]&=693,\label{eq:c1}\\
+ \det C_2[0\!:\!23,\,0\!:\!23]&=349,\label{eq:c2}\\
+ \det G_2[0\!:\!5,\,0\!:\!5]&=256.\label{eq:g2}
+\end{align}
+Each interval includes its left endpoint and excludes its right endpoint.
+Appendix~\ref{app:verifier} implements the complete calculation by
+truncated polynomial multiplication and elimination. In particular, no
+sampling of a numerical real curve is used. The prime does not divide $D$
+or the denominators of $T$. Therefore reduction is defined on all
+coefficients in the recursion and the three displayed rational minors.
+Their nonzero residues prove nonvanishing over $\Q$ and over $\R$.
+
+For clarity, the finite polynomial approximation determines the required
+coefficients of the \emph{actual real curve}, without presupposing convergence
+of a formal power series. Set $\widetilde F=J^{-1}F$. In a sufficiently
+small convex neighborhood,
+$\|D_u\widetilde F-I\|<1/2$. Integration along the segment from
+$u(t)$ to $u_{22}(t)$ gives
+\begin{equation}\label{eq:error}
+ \|u_{22}(t)-u(t)\|
+ \leq2\|\widetilde F(t,u_{22}(t))\|=O(|t|^{23}).
+\end{equation}
+Both endpoints tend to zero, so the segment lies in this neighborhood
+for small $t$. Polynomial substitution in the chart, or into any fixed
+quadratic test, preserves this error order.
+
+Let $\Ical$ denote the real span of the six Gram quadratics on $W$.
+Equation~\eqref{eq:trace} and \eqref{eq:g2} give $\dim\Ical=5$.
+Every member vanishes on $b(t)$, hence belongs to $\ker C_2$ by
+\eqref{eq:error}. Equation~\eqref{eq:c2} and $28-5=23$ give
+\begin{equation}\label{eq:kernels}
+ \ker C_1=0,\qquad \ker C_2=\Ical.
+\end{equation}
+The six simplex labels are an invertible linear change of the six entries
+of a symmetric matrix, by \eqref{eq:simplex}. Their unique restricted
+relation is \eqref{eq:labelrelation}, whose coefficient of $q_{23}$ is
+nonzero. Thus the five labels used in $f$ are linearly independent.
+
+\section{Avoiding any finite family of quadratic tests}
+Fix an arbitrary finite family $\mathcal T$ of real polynomials on $W$
+of degree at most two. For $p=c+\lambda+q\notin\Ical$, with homogeneous
+components of degrees zero, one, and two, the order-$j$ coefficient of
+$p(\rho b(t))$ through order 22 is
+\begin{equation}\label{eq:rho}
+ \delta_{j0}c+\rho[\lambda(b(t))]_j+\rho^2[q(b(t))]_j.
+\end{equation}
+At least one of these is a nonzero polynomial in $\rho$. Otherwise
+comparison of its degrees, followed by \eqref{eq:kernels}, would give
+$c=0$, $\lambda=0$, and $q\in\Ical$.
+For each of the finitely many $p\notin\Ical$, choose one such nonzero
+coefficient polynomial. Choose $\rho>0$ close to 1 outside their finite
+sets of roots. For this fixed $\rho$, \eqref{eq:error} and the first
+nonzero coefficient show that every one of these tests is nonzero at
+$\rho b(t)$ for all sufficiently small positive $t$. Choose a common
+such $t$ and put
+\begin{equation}\label{eq:bscaled}
+ b=\rho b(t).
+\end{equation}
+Both choices may be made in any prescribed neighborhoods of 1 and 0.
+Thus the local rank and derivative conditions needed below hold at this
+base. The tests in $\Ical$ vanish there; all remaining tests do not.
+
+\section{Two paths with the same exact Gram matrix}
+Fix the matrices
+\begin{equation}\label{eq:target}
+ R=\begin{pmatrix}1&1/4&0\\1/4&1&0\\0&0&2\end{pmatrix},\qquad
+ S=\begin{pmatrix}1&1/4&0\\0&\sqrt{15}/4&0\\0&0&\sqrt2\end{pmatrix}.
+\end{equation}
+They satisfy $S\transpose S=R$, $\det S>0$, $R\succ0$ and
+$\tr(HR)=0$. The six simplex labels of $R$, in order $01,02,03,12,13,23$,
+are
+\begin{equation}\label{eq:targetlabels}
+ (3/2,17/2,1/2,17/2,1/2,7/2).
+\end{equation}
+
+Keep the chosen $t,\rho$ fixed, but temporarily allow $u$ to vary near
+$u(t)$. Set $B=\rho\Phi_B$ and $O=O_k$, so the moving base matrix
+$A=\rho\Phi_A$ is $O[B;0]$, irrespective of whether the linear
+constraints hold. Define
+\[
+ B'=BS^{-1},\quad G=B'(B')\transpose,\quad
+ n=\frac{\operatorname{row}_0(B')\times\operatorname{row}_1(B')}
+ {|\operatorname{row}_0(B')\times\operatorname{row}_1(B')|}.
+\]
+Nearby, $B'$ has row rank two, $G\succ0$, and these functions are smooth.
+For small signed $\varepsilon$, put $M_\varepsilon=I_2-\varepsilon^2G^{-1}$
+and
+\begin{equation}\label{eq:sqrt}
+ U=\frac{M_\varepsilon+\sqrt{\det M_\varepsilon}\,I_2}
+ {\sqrt{\tr M_\varepsilon+2\sqrt{\det M_\varepsilon}}}.
+\end{equation}
+All radicands are strictly positive nearby. The two-by-two
+Cayley--Hamilton identity gives $U^2=M_\varepsilon$; $U$ is symmetric
+and equals $I_2$ at $\varepsilon=0$. Define
+\begin{equation}\label{eq:rawpaths}
+ \widehat A_\varepsilon
+ =O\begin{pmatrix}B'\\\varepsilon n\transpose\end{pmatrix}S,
+ \qquad \widehat B_\varepsilon=UB'S.
+\end{equation}
+At zero these equal the moving scaled base chart.
+
+The orthogonal projection onto the row space of $B'$ is both
+$(B')\transpose G^{-1}B'$ and $I_3-nn\transpose$. Therefore, for all
+nearby parameters, not merely those satisfying the constraints,
+\begin{align}
+ \widehat A_\varepsilon\transpose\widehat A_\varepsilon
+ -\widehat B_\varepsilon\transpose\widehat B_\varepsilon
+ &=\varepsilon^2S\transpose
+       (nn\transpose+(B')\transpose G^{-1}B')S
+   =\varepsilon^2R,\label{eq:exactgram}\\
+ \det\widehat A_\varepsilon
+ &=\varepsilon\,|\operatorname{row}_0(B')\times
+                     \operatorname{row}_1(B')|\,\det S.
+ \label{eq:exactdet}
+\end{align}
+
+Impose rows 1 through 7 of $L$ on \eqref{eq:rawpaths} and solve for $u$
+as a function of $\varepsilon$. At zero the equation holds at $u(t)$;
+its $u$-derivative is $\rho D_uF(t,u(t))$. It is invertible for
+sufficiently small $t$ by \eqref{eq:D} and continuity. The real implicit
+function theorem yields a smooth solution for both signs of small
+$\varepsilon$. By \eqref{eq:exactgram}, the perturbed $H$-trace is zero.
+The active equations again give $P=TN+\ell e_0$, so
+\eqref{eq:omitted} still holds. Its second factor is close to $2\rho>0$;
+the omitted row therefore holds as well.
+
+We have obtained a path $x(\varepsilon)$ in the \emph{same fixed space}
+$W$, with $x(0)=b$ and
+\begin{equation}\label{eq:finalpaths}
+ Q(x(\varepsilon))=\varepsilon^2R,\qquad
+ \sgn\det A(x(\varepsilon))=\sgn\varepsilon\quad(\varepsilon\ne0).
+\end{equation}
+In particular, for sufficiently small $\varepsilon>0$,
+\begin{equation}\label{eq:values}
+ f(x(\varepsilon))=\varepsilon^2/2>0,\qquad f(x(-\varepsilon))=0.
+\end{equation}
+For every $p\in\mathcal T\setminus\Ical$, $p(b)\ne0$ and continuity
+gives the same nonzero sign at both points. For every $p\in\mathcal T
+\cap\Ical$, the exact Gram identity gives equal values at the two
+points, including when that common value is zero. Finiteness permits
+one positive $\varepsilon$ working for all tests. We have proved:
+
+\begin{proposition}\label{prop:signs}
+For every finite family of real polynomials of degree at most two on $W$,
+there are two points at which all members of the family have identical
+signs, but $f$ has different signs.
+\end{proposition}
+The order of choices was: fixed $W,f$; arbitrary finite family;
+$\rho$; a positive $t$ and its base; corrected paths; a positive
+$\varepsilon$. Neither $W$ nor $f$ depends on the tests.
+
+\section{Removing every degree bound on a representation}
+\begin{lemma}\label{lem:radial}
+If a positively homogeneous function of degree two is a polynomial lattice
+expression, its sign is determined by the signs of finitely many real
+polynomials of degree at most two.
+\end{lemma}
+\begin{proof}
+Write $g=\mathcal L(p_1,\ldots,p_m)$ for a finite min--max expression,
+and decompose each polynomial as
+$p_i=c_i+\lambda_i+q_i+$ terms of degree at least three.
+For fixed $x$, as $r\to0^+$, the limit of $r^{-2}p_i(rx)$ in the
+extended real line is
+\[
+ \begin{cases}
+  \sgn(c_i)\,\infty,&c_i\ne0,\\
+  \sgn(\lambda_i(x))\,\infty,&c_i=0,\ \lambda_i(x)\ne0,\\
+  q_i(x),&c_i=0,\ \lambda_i(x)=0.
+ \end{cases}
+\]
+Positive scaling commutes with minimum and maximum. Homogeneity gives
+\[
+ g(x)=\mathcal L(r^{-2}p_1(rx),\ldots,r^{-2}p_m(rx))\qquad(r>0).
+\]
+The two lattice operations are continuous on the extended real line,
+so this equality passes to their finitely many limits. After this passage,
+apply the sign map to the result: the sign map commutes with minimum and
+maximum in the ordered sets $[-\infty,\infty]$ and $\{-1,0,1\}$.
+The sign of $g(x)$ is therefore determined by the signs of the finite
+family $\{\lambda_i,q_i:1\leq i\leq m\}$ and the fixed constants $c_i$.
+No continuity of the sign map is asserted or used.
+\end{proof}
+
+Applying Lemma~\ref{lem:radial} to \eqref{eq:homog} contradicts
+Proposition~\ref{prop:signs}. This proves Theorem~\ref{thm:main}, including
+the absence of any bound on the number, real coefficients, or degrees of
+the auxiliary polynomials. The argument proves a finite quadratic
+\emph{sign} condition; it does not assert that a lattice representation
+could be replaced by one whose leaves all have degree at most two.
+
+\appendix
+\section{Executable finite certificate}\label{app:verifier}
+The following Python 3 program uses NumPy and the standard library.
+It performs no random generation, numerical rank estimates, or file writes.
+The isometry check uses exact fractions. The Jacobian determinant uses
+integer Bareiss elimination. All truncated polynomial operations and
+subsequent elimination are modulo 1009; each multiplication is reduced
+before another multiplication. At order 22, the displayed dimensions and
+bounded residues keep all NumPy integer intermediates below $2^{63}$.
+The first derivatives of the chart at its base have entries in
+$\{0,\pm1,\pm2\}$, so the centered modular recovery used for that
+integer Jacobian is exact. The characteristic-zero lifting and the
+comparison with the real curve are proved in the body of the paper.
+
+The expected rank and determinant triples are $(7,693)$, $(23,349)$,
+and $(5,256)$. The output also gives the selected row and column indices;
+they are respectively the three fixed minors
+\eqref{eq:c1}--\eqref{eq:g2}. A failed check raises an exception, including
+when Python is invoked with optimization enabled.
+
+\lstinputlisting{verify_certificate7.py}
+\end{document}
