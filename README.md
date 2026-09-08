@@ -1,8 +1,17 @@
-# A piecewise quadratic function without a polynomial lattice representation
+# A counterexample to the Pierce-Birkhoff conjecture
 
-**Review status:** The work is currently being checked by our human expert;
-that review has not yet been completed. No completed human expert review of
-the 30-dimensional construction is claimed.
+The Pierce-Birkhoff conjecture is a classical, longstanding problem in real
+algebraic geometry, with roots in Birkhoff and Pierce's 1956 work on
+lattice-ordered rings [1]. It asks whether every continuous piecewise
+polynomial function on `ℝⁿ`, with finitely many semialgebraic pieces, can be
+expressed using finitely many maxima and minima of polynomials. The
+counterexample here gives a negative answer even when all polynomial pieces
+are quadratic, while allowing polynomials of arbitrary degrees in the
+proposed representation.
+
+**Human expert checking:** The 30-dimensional construction and its proof have
+undergone careful human expert checking. We present this version because its
+proof is conceptually simple and readily checked by hand.
 
 The main construction is an explicit function on the whole space
 `Sym₅(ℝ) × Sym₅(ℝ)`, identified with `ℝ³⁰` by the thirty independent
@@ -82,3 +91,10 @@ independent kernel implementation are separate matters.
 ## AI assistance
 
 GPT-6 and Claude 5.1 assisted in the development and review of this work.
+
+## References
+
+[1] Garrett Birkhoff and R. S. Pierce, *Lattice-ordered rings*,
+Anais da Academia Brasileira de Ciências **28** (1956), 41–69.
+For the history of the conjecture and its later formulation, see
+[Lucas, Madden, Schaub, and Spivakovsky, Section 1](https://arxiv.org/pdf/math/0601671).
