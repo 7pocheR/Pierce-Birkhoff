@@ -1,62 +1,68 @@
-# A six-variable piecewise quadratic counterexample
+# A five-variable piecewise cubic counterexample
 
 **Review status:** The proof is currently being checked by our human expert;
 that review has not yet been completed.
 
-This branch contains an explicit continuous function on all of `ℝ⁶`, with
-five closed semialgebraic polynomial pieces: zero and four homogeneous
-quadratics. Its complete Lean statement excludes every finite maximum/minimum
-expression in real polynomials, with no restriction on their degrees,
-coefficients or number.
+This branch contains an explicit continuous function on all of `ℝ⁵`, with
+five closed semialgebraic polynomial pieces: zero and four polynomials of
+degree at most three. Its complete Lean statement excludes every finite
+maximum/minimum expression in real polynomials, with no restriction on their
+degrees, coefficients or number.
 
-- [Six-variable manuscript](pb_counterexample6.pdf)
-- [LaTeX source](pb_counterexample6.tex)
-- [Finite exact certificate](verify_certificate6.py)
-- [Final formal statements](lean6/PBCounterexample/Gram6Main.lean)
-- [Lean project and verification instructions](lean6/README.md)
+- [Five-variable manuscript](pb_counterexample5.pdf)
+- [LaTeX source](pb_counterexample5.tex)
+- [Final formal statements](lean5/PBCounterexample/Gram5Main.lean)
+- [Lean project and verification instructions](lean5/README.md)
+- [Recorded formal verification](lean5/verification/RECORD.md)
 
-The six independent coordinates specify a rational `5 × 3` matrix `C`.
-Let `A` be its first three rows, `β = diag(1,1,3,−1,−1)`, and `Q = CᵀβC`.
-Set `vᵢ = 4eᵢ − (1,1,1)` for `i < 3` and `v₃ = (−1,−1,−1)`.
-The four labels are `−vᵢᵀQvⱼ` for the edges `01, 03, 12, 13`.
-If `h` is their minimum, the function is `h` where
-`h > 0` and `det A > 0`, and zero elsewhere. The manuscript specifies the
-coordinate matrix and proves all properties of this formula.
+The five independent coordinates are `(a,b,c,d,e)`. The manuscript specifies
+a polynomial `5 × 3` matrix `C`, sets `Q = Cᵀ diag(1,1,3,−1,−1) C`, and
+defines four polynomial labels from `Q`. Let `h` be their minimum and `D`
+the signed determinant of the first three rows of `C`. The function is `h`
+where `h > 0` and `D > 0`, and zero elsewhere. The implication
+`h > 0 → D ≠ 0` gives continuity and the stated closed cover.
+
+The proof constructs two actual real points for every finite collection
+of proposed polynomial leaves. Weighted polynomial decomposition controls
+all leaves, including those of arbitrarily high degree.
 
 The main closed existential theorem is
-`PBCounterexample.Gram6.exists_whole_space_counterexample`.
+`PBCounterexample.Gram5.exists_whole_space_counterexample`.
 The same namespace contains `whole_space_counterexample` for the specified
 function and `not_finite_sup_inf_polynomials` for the explicit finite
-max–min formulation.
+max–min formulation. Independent expanded statements bind the formal result
+to the displayed function, cover and labels.
 
 ## Scope
 
-The domain is the whole six-dimensional real affine space, not a proper
-algebraic subset. The polynomial labels are quadratic; the displayed
-partition also uses the cubic polynomial `det A`. No claim of minimum
-possible dimension, or of a resolution of PB(3), is made.
+The domain is the whole five-dimensional real affine space, not a proper
+algebraic subset. The piece labels have degree at most three; the displayed
+partition also uses the determinant polynomial `D`. No claim of minimum
+possible dimension, or of a resolution of PB(3) or PB(4), is made.
 
-The standalone `lean6` project contains only the 29 mathematical modules
-needed for this construction, together with an import wrapper and separate
-verification programs. It does not import or rebuild a higher-dimensional
-example. The earlier `lean7` and `lean` projects and their manuscripts are
-retained unchanged as legacy material. The collaborator's separate 30-dimensional
-construction is available on the [main branch](https://github.com/7pocheR/Pierce-Birkhoff/tree/main).
+The standalone `lean5` project contains 24 implementation modules, an import
+wrapper, three independent mathematical modules, and separate verification
+programs. It does not import or rebuild a higher-dimensional example.
+Earlier projects and manuscripts are retained unchanged as historical
+material. The six-dimensional example is available on
+[6d](https://github.com/7pocheR/Pierce-Birkhoff/tree/6d); the collaborator's
+30-dimensional construction remains on
+[main](https://github.com/7pocheR/Pierce-Birkhoff/tree/main).
 
 ## Reproducing the checks
 
-The Lean project pins Lean `v4.34.0-rc1` and mathlib commit
-`ffbfefaec67d01d561affd800125a281db8bb7f3`. After installing the pinned
-toolchain through Elan, enter `lean6`, obtain dependency artifacts with
-`lake exe cache get`, and run `bash verify.sh`. See the
-[verification instructions](lean6/README.md) for the precise scope and the
-differences between some intermediate manuscript and Lean arguments.
+The project pins Lean `v4.34.0-rc1` and Mathlib commit
+`ffbfefaec67d01d561affd800125a281db8bb7f3`, together with all transitive
+dependency revisions. On Linux, use `./verify.sh` from `lean5` with the
+requirements in its [README](lean5/README.md).
 
-The auxiliary arithmetic certificate can be run with
-`python3 -B verify_certificate6.py`; it requires SymPy and unoptimized Python.
-It checks 50 exact algebraic assertions, including the quadratic-curve and
-joint-kernel ranks `11` and `18`, with integer minor determinants `2³⁵` and `2⁶⁹`.
-The complete formal proof does not depend on trusting this Python program.
+The recorded completed run freshly compiled the released mathematical sources
+and replayed their entire logical dependency closure in an initially empty
+Lean kernel environment at trust level zero. Only the standard axioms
+`propext`, `Classical.choice`, and `Quot.sound` were admitted. The
+[verification record](lean5/verification/RECORD.md) includes the complete
+audit output and distinguishes this completed run from the portable shell
+script, which has not itself completed an external reproduction.
 
 Formal verification concerns the exact Lean declarations and uses Lean's
 standard classical foundations. Source-level mathematical review, human
@@ -65,4 +71,4 @@ separate matters.
 
 ## AI assistance
 
-GPT-6 and Claude 5.1 assisted in the development and review of this work.
+GPT-6 assisted in the development and review of the five-dimensional work.

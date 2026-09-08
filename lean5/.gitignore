@@ -1,0 +1,7 @@
+.lake/
+build/
+*.olean
+*.ilean
+*.o
+__pycache__/
+!verification/completed-run/*.log
