@@ -53,8 +53,8 @@ in the linked PDF. Neither construction is claimed to have minimum possible
 ambient dimension.
 
 The original [Main.lean](PBCounterexample/Main.lean),
-[PDF](../pierce_birkhoff_counterexample.pdf), and
-[LaTeX source](../pierce_birkhoff_counterexample.tex) are retained for the
+[PDF](../../72d/pierce_birkhoff_counterexample.pdf), and
+[LaTeX source](../../72d/pierce_birkhoff_counterexample.tex) are retained for the
 legacy 72-dimensional construction on two unrestricted six by six matrices.
 Its main declarations are in `PBCounterexample`, without either new main
 namespace. Its cover has 193 pieces and uses a degree-six determinant.
@@ -142,9 +142,9 @@ inspection, source rebuilding, and kernel replay address different aspects
 of verification; none alone establishes the intended mathematical meaning
 of a definition or correspondence with a PDF.
 
-No completed human expert review of the 30-dimensional construction is
-claimed; see the repository's [review-status notice](../README.md). Formal
-checks do not replace human mathematical review or journal peer review.
+The 30-dimensional construction and the proof in the [main paper](../../paper.pdf)
+have undergone careful human expert checking. Formal verification and
+journal peer review are distinct from that mathematical checking.
 
 ## Proof organization
 
