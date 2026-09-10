@@ -4,7 +4,6 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{color}
 \usepackage{graphicx,float}
-\usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -44,10 +43,10 @@
 \author[J.~Ren]{Junyu Ren}
 \address{Computational and Applied Mathematics Initiative, University of Chicago, Chicago, IL 60637}
 \email{lekheng, junyuren@uchicago.edu}
-\date{\today}
+\date{September 9, 2026}
 
 \begin{abstract}
-We provide a counterexample to the Pierce--Birkhoff conjecture: a continuous function that is piecewise quadratic on a finite collection of semialgebraic sets that partition $\mathbb{R}^n$ but that cannot be expressed as a finite lattice combination of polynomials of arbitrary degrees. We also give an eight-variable counterexample whose partition is defined by quadratic polynomials.
+We provide a counterexample to the Pierce--Birkhoff conjecture: a continuous function that is piecewise quadratic on a finite collection of semialgebraic sets that partition $\mathbb{R}^n$ but that cannot be expressed as a finite lattice combination of polynomials. 
 The counterexample was found with the assistance of our multi-agent, multi-model setup that chains together GPT 5.6, GPT 6, Claude Opus 5, and Claude Fable 5.1.
 \end{abstract}
 
@@ -62,7 +61,7 @@ where $g_1,\dots,g_r \in \mathbb{R}[x_1,\dots,x_n]$, and
 \begin{equation}\label{eq:part}
 \mathbb{R}^n = \Pi_1 \cup \dots \cup \Pi_r
 \end{equation}
-is a partition into semialgebraic sets $\Pi_1,\dots,\Pi_r$. Here $1_{\Pi}$ denotes the indicator function. A function as defined by \eqref{eq:def} and \eqref{eq:part} is sometimes called a semialgebraic spline \cite{dipasquale2017}, a generalization of splines \cite{Chui}, the special case when $\Pi_1,\dots,\Pi_r$ are polyhedral regions.
+is a partition into semialgebraic sets $\Pi_1,\dots,\Pi_r$. Here $1_{\Pi}$ denotes the indicator function. A function as defined by \eqref{eq:def} and \eqref{eq:part} is sometimes called a semialgebraic spline \cite{dipasquale2017}, a generalization of splines \cite{Chui}, the special case when $\Pi_1,\dots,\Pi_r$ are polytopes.
 
 So a precise statement of the Pierce--Birkhoff conjecture is as follows:
 \begin{conjecture}[Pierce--Birkhoff]\label{conj:PB}
@@ -72,35 +71,33 @@ f=\max_{i=1,\dots,p}\min_{j=1,\dots,p'} f_{ij}
 \end{equation}
 with finitely many polynomials $f_{ij} \in \mathbb{R}[x_1,\dots,x_n]$, $i =1,\dots,p$, $j=1,\dots,p'$.
 \end{conjecture}
-The conjecture was first formally stated in  \cite{HI} but has roots in Birkhoff and Pierce's earlier work \cite{BP}. It is only known to be true for $n \le 2$ \cite{Mahe1984}. We have proved this conjecture in \cite[Theorem~3.4]{LL} (a purely human endeavor with no AI usage) for splines, i.e., when the semialgebraic sets $\Pi_1,\dots,\Pi_r$ are defined by \emph{linear} polynomials, with no restriction on the degrees of the polynomial pieces. The counterexample constructed below shows that this result does not extend to arbitrary semialgebraic partitions, even for piecewise quadratic functions.
+The conjecture was first formally stated in  \cite{HI} but has roots in Birkhoff and Pierce's earlier work \cite{BP}. It is only known to be true for $n \le 2$ \cite{Mahe1984}. We have proved this conjecture in \cite{LL} (a purely human endeavor with no AI usage) for splines, i.e., when the semialgebraic sets $\Pi_1,\dots,\Pi_r$ are defined by \emph{linear} polynomials. The counterexample constructed below shows that this result does not extend to arbitrary semialgebraic partitions, even for piecewise quadratic functions.
 
 The role of large language models in our discovery and verification process is described in Section~\ref{sec:ai-usage}. The counterexample in this article is notably not found with any single large language model (we tried doing so without success) but requires harnessing multiple systems from both OpenAI and Anthropic in a more intricate setup.
 
-The $n = 30$ counterexample presented below is chosen because it can be readily ``checked by hand.'' Table~\ref{tab:counterexamples} summarizes the six constructions published with complete Lean formalizations at \url{https://github.com/7pocheR/Pierce-Birkhoff}, where matching manuscripts and verification instructions are also available. The thirty-variable row refers to the forty-label function proved in this article.
+The $n = 30$ counterexample presented below is chosen because it can be readily ``checked by hand.'' Nevertheless, our setup has also generated counterexamples of dimensions $n = 5$, $6$, $7$, $22$, $24$, $72$ although they are harder for a human reader to verify. The counterexamples for $n =5$, $6$, $7$, $30$ (the one described in this article), and $72$ have also been verified through Lean-formalization: \url{https://github.com/7pocheR/Pierce-Birkhoff}.
 
-We write $n$ for the number of independent real variables, $d$ for the maximum ordinary total degree of the polynomials defining the displayed partition, and $k$ for the maximum ordinary total degree of the spline pieces. Each function is defined on all of $\mathbb{R}^n$. The partition pieces are entire realizations of the negative, zero, and positive signs of finitely many polynomial tests; one polynomial label agrees with the function on each entire realization, including all of its connected components. The values of $d$ describe the displayed partitions and do not assert minimality under repartitioning. Neither $d$ nor $k$ bounds the degrees of polynomials in a proposed lattice representation.
+
+
+Table~\ref{tab:counterexamples} records the six constructions indexed in the accompanying repository, including the eight-variable example. For this table, $n$ is the number of independent real variables, $d$ is the maximum ordinary total degree of the polynomial sign tests defining the displayed partition, and $k$ is the maximum ordinary total degree of its polynomial pieces. Each function is defined on all of $\mathbb{R}^n$, with one polynomial on each entire ternary sign realization. The values of $d$ do not assert optimality under repartitioning. The thirty-variable row refers to the forty-label function below. Competing polynomial lattice representations have unrestricted degrees.
 
 \begin{table}[htb]
 \centering
 \caption{Parameters of the six published constructions, ordered lexicographically by $(n,d,k)$.}
 \label{tab:counterexamples}
-\begin{tabular}{@{}rrr@{}}
-\toprule
+\begin{tabular}{rrr}
+\hline
 Variables $n$ & Partition degree $d$ & Spline degree $k$ \\
-\midrule
+\hline
 5  & 4 & 3 \\
 6  & 3 & 2 \\
 7  & 3 & 2 \\
 8  & 2 & 2 \\
 30 & 5 & 2 \\
 72 & 6 & 2 \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
-
-The five-variable example has cubic pieces but uses a quartic partition polynomial. The six- and seven-variable examples have quadratic pieces and cubic partition polynomials. In contrast, the \href{https://github.com/7pocheR/Pierce-Birkhoff/tree/main/n=8_d=2_k=2}{eight-variable construction} has both a quadratic partition and quadratic pieces: it supplies 137 polynomial sign tests of degree at most two, with one polynomial label of degree at most two on each entire sign realization. It is obtained by adding two independent cofactor coordinates to the six-variable example, with polynomial restriction transferring nonrepresentation. This gives a negative answer for quadratic partitions. Together with \cite[Theorem~3.4]{LL}, it shows that degree two is the smallest partition degree allowing a counterexample. No claim of minimum possible dimension is made.
-
-
 
 \section{The 30-dimensional function}
 
@@ -144,14 +141,12 @@ Hence $P_{ii}>0$ and
 for every row $i$. Thus $P$ is strictly diagonally dominant by rows. Therefore $P$ is invertible. Since $P=XY$, both factors are invertible.
 \end{proof}
 
-Recall that a function is positively homogeneous of degree $\alpha$ if $f(t x) = t^\alpha f(x)$ for all $t > 0$.
+Recall that a function is positively homogeneous of degree $d$ if $f(t x) = t^d f(x)$ for all $t > 0$.
 \begin{proposition}
-The function $f$ is continuous, positively homogeneous of degree two, and piecewise quadratic.
+The function $f$ is a continuous, positively homogeneous of degree two, and piecewise quadratic polynomial.
 \end{proposition}
 \begin{proof}
-On the open set $\{h>0\}$, the previous lemma implies $\det X\ne0$, so $\sgn(\det X)$ is locally constant and $f$ is continuous there. On $\{h<0\}$, the function is identically zero. At points where $h=0$, continuity follows from $0\le f\le\max(h,0)$ and the continuity of $h$.
-
-To obtain a finite semialgebraic partition with a polynomial label on every piece, use the signs of $\det X$, the forty forms $q_{ij,\pm}$, and their pairwise differences. These signs determine whether $f$ is zero and, otherwise, a minimizing label. The determinant has degree five and the other tests have degree at most two, so this is the partition recorded in Table~\ref{tab:counterexamples}.
+On the open set $\{h>0\}$, the previous lemma implies $\det X\ne0$, so $\sgn(\det X)$ is locally constant. This implies $f$ is  continuous.
 
 By definition, we see that
 \[
@@ -269,7 +264,7 @@ U_\delta DU_\delta^\tp =E_{11}+\delta^2E_{22},
 \qquad
 U_\delta^{-\tp} EU_\delta^{-1}=E_{33}+\delta^2E_{44},
 \]
-which tends to $(E_{11},E_{33})$ as $\delta \to 0$. If $u$ and $s$ are nonzero and $u^\tp s=0$, we can choose $W\in\GL_5(\mathbb R)$ with $We_1=u$ and $W^{-\tp} e_3=s$; applying the fixed change of basis $W$ gives the desired pair in the closure. The cases where either vector is zero follow by taking limits of nonzero orthogonal pairs.
+which tends to $(E_{11},E_{33})$ as $\delta \to 0$. If $u^\tp s=0$, we can choose $W\in\GL_5(\mathbb R)$ with $We_1=u$ and $W^{-\tp} e_3=s$; applying the fixed change of basis $W$ gives the desired pair in the closure.
 
 Hence
 \[
@@ -352,7 +347,7 @@ Therefore
 \qquad
 \det X_-<0.
 \]
-Thus the sign of the determinant distinguishes the two perturbations.
+The determinant remembers the hidden sign.
 
 Since $X_\eta Y_\eta=\varepsilon^2I_5$, all off-diagonal entries of $P$ vanish and all diagonal entries equal $\varepsilon^2$. Thus every defining quadratic satisfies
 \[
@@ -406,7 +401,7 @@ There are finitely many $p_j$, so one sufficiently small $\varepsilon>0$ works f
 \end{proof}
 
 \begin{theorem}[The 30-dimensional lattice obstruction]
-The function $f$ is continuous, positively homogeneous of degree two, and piecewise quadratic. It admits no finite lattice expression in real polynomials of arbitrary degrees.
+The function $f$ is a continuous, positively homogeneous of degree two, and piecewise quadratic polynomial. It admits no finite lattice expression in real polynomials of arbitrary degrees.
 \end{theorem}
 
 
@@ -427,17 +422,51 @@ Our investigation started with an attempt to extend results for hyperplane parti
 
 \section{Insight in artificial intelligence}\label{sec:ai-app}
 
-For scalar-valued functions on $\mathbb{R}^{30}$, consider the pure ReLU encoders of \cite{lai2024}, with ReLU attention and feed-forward activations and with normalization and output SoftMax omitted. Their coordinates are obtained by finitely many additions, multiplications, and maxima, so they are polynomial lattice functions \cite[Section~2.4]{lai2024}. Conversely, every polynomial lattice function is represented by such an encoder \cite[Theorem~3.8]{lai2024}. Thus \cite[Theorem~3.4]{LL} and the counterexample proved here give
+This article is slightly unusual in that while it is AI-assisted, it also sheds light on the AI technology that produces it. We showed in \cite{lai2024}  that a \emph{pure transformer}, i.e., with the ``add \& norm'' layers omitted, is a semialgebraic spline, and that if the Pierce--Birkhoff conjecture were true, then the converse would also hold. The counterexample here shows that this is not the case. Combined with the work in \cite{lai2024} and \cite{LL}, we now know that the inclusions are strict:
 \[
-\{\text{splines on hyperplane partitions}\}
-\subsetneq
-\{\text{pure ReLU encoder functions}\}
-\subsetneq
-\{\text{semialgebraic splines}\}.
+\{ \text{splines} \} \quad \subsetneq \quad\{ \text{pure transformers} \} \quad \subsetneq \quad\{ \text{semialgebraic splines} \},
 \]
-The first inclusion is strict because $\max(x_1^2-x_2,0)$ has a parabolic switching hypersurface and admits no hyperplane partition with polynomial pieces. The second is strict because the counterexample has no polynomial lattice representation. These conclusions concern exact representation by finite encoders.
+i.e., every spline can be represented as a  ReLU-activated pure transformer, but there exist semialgebraic splines that cannot be so represented.
 
-\bibliographystyle{abbrv}
-\bibliography{assets/ref}
+\begin{thebibliography}{1}
+
+\bibitem{BP}
+G.~Birkhoff and R.~S. Pierce.
+\newblock Lattice-ordered rings.
+\newblock {\em An. Acad. Brasil. Ci.}, 28:41--69, 1956.
+
+\bibitem{Chui}
+C.~K. Chui.
+\newblock {\em Multivariate splines}, volume~54 of {\em CBMS-NSF Regional
+  Conference Series in Applied Mathematics}.
+\newblock Society for Industrial and Applied Mathematics, Philadelphia, PA,
+  1988.
+
+\bibitem{dipasquale2017}
+M.~DiPasquale, F.~Sottile, and L.~Sun.
+\newblock Semialgebraic splines.
+\newblock {\em Comput. Aided Geom. Design}, 55:29--47, 2017.
+
+\bibitem{HI}
+M.~Henriksen and J.~R. Isbell.
+\newblock Lattice-ordered rings and function rings.
+\newblock {\em Pacific J. Math.}, 12:533--565, 1962.
+
+\bibitem{LL}
+Z.~Lai and L.-H. Lim.
+\newblock Pierce-Birkhoff conjecture is true for splines.
+\newblock {\em arXiv:2507.07976}, 2025.
+
+\bibitem{lai2024}
+Z.~Lai, L.-H. Lim, and Y.~Liu.
+\newblock Attention is a smoothed cubic spline.
+\newblock {\em arXiv:2408.09624}, 2024.
+
+\bibitem{Mahe1984}
+L.~Mah\'e.
+\newblock On the {P}ierce--{B}irkhoff conjecture.
+\newblock {\em Rocky Mountain J. Math.}, 14(4):983--985, 1984.
+
+\end{thebibliography}
 
 \end{document}
