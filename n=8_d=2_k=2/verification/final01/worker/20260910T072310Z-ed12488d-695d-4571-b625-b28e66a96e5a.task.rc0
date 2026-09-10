@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+[[ "${SLURM_JOB_ID:-}" == 1655216 ]]
+node_root=/tmp/pb8-1655216.1Zr6aP
+bundle="$PB_COMPUTE_ROOT/inputs/final01/lean8"
+base=/net/scratch2/junyuren/pb_conjecture_compute/session-20260908.G6VFik/runtime/gram6-independent-source.MuyC8G
+result="$PB_COMPUTE_ROOT/results/quadratic8-final01"
+mkdir -p "$result"
+fresh=$(mktemp -d "$node_root/final01.XXXXXX")
+printf 'JOB=%s\nNODE=%s\nFRESH_SOURCE_ROOT=%s\n' "$SLURM_JOB_ID" "$(hostname)" "$fresh" | tee "$result/execution.txt"
+cd "$bundle"
+sha256sum -c verification/source.sha256 > "$result/bundle-manifest-check.txt"
+cmp lake-manifest.json "$base/lake-manifest.json"
+cp -a . "$fresh/"
+source "$node_root/environment.sh"
+[[ "${LEAN_PATH%%:*}" == "$node_root/project/.lake/build/lib/lean" ]]
+export LEAN_PATH="$fresh/.lake/build/lib/lean:${LEAN_PATH#*:}"
+cd "$fresh"
+finish() {
+  rc=$?
+  trap - EXIT
+  printf '%s\n' "$rc" > "$result/exit-code"
+  if [[ -d fresh-build-logs ]]; then cp -a fresh-build-logs "$result/"; fi
+  cp verification/source.sha256 "$result/source.sha256"
+  printf 'FINAL_VERIFICATION_EXIT=%s\n' "$rc"
+  exit "$rc"
+}
+trap finish EXIT
+sha256sum -c verification/source.sha256 > "$result/source-before.txt"
+python3 -u verification/build_fresh.py 2>&1 | tee "$result/fresh-build.log"
+for check in Statements8 Formula8; do
+  rc=0
+  lean --trust=0 "verification/$check.lean" > "$result/$check.log" 2>&1 || rc=$?
+  printf '%s\n' "$rc" > "$result/$check.exit-code"
+  printf 'CHECK %s EXIT=%s\n' "$check" "$rc"
+  if (( rc != 0 )); then cat "$result/$check.log"; exit "$rc"; fi
+done
+rc=0
+lean --trust=0 verification/TrustReplay8.lean 2>&1 | tee "$result/TrustReplay8.log" || rc=$?
+printf '%s\n' "$rc" > "$result/TrustReplay8.exit-code"
+if (( rc != 0 )); then exit "$rc"; fi
+sha256sum -c verification/source.sha256 > "$result/source-after.txt"
+printf 'QUADRATIC8_FROZEN_SOURCE_BUILD_AND_VERIFICATION_COMPLETE\n'

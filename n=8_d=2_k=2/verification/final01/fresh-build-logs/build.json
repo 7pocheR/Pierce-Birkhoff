@@ -1,0 +1,698 @@
+{
+  "lean_path": [
+    "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/toolchain/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/packages/Cli/.lake/build/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/packages/batteries/.lake/build/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/packages/Qq/.lake/build/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/packages/aesop/.lake/build/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/packages/proofwidgets/.lake/build/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/packages/importGraph/.lake/build/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/packages/LeanSearchClient/.lake/build/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/packages/plausible/.lake/build/lib/lean",
+    "/tmp/pb8-1655216.1Zr6aP/packages/mathlib/.lake/build/lib/lean"
+  ],
+  "project": "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9",
+  "compiler": {
+    "executable": "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+    "executable_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "version": "Lean (version 4.34.0-rc1, x86_64-unknown-linux-gnu, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)\n",
+    "lean_toolchain": "leanprover/lean4:v4.34.0-rc1\n",
+    "sysroot": "/tmp/pb8-1655216.1Zr6aP/toolchain",
+    "shared_library_sha256": "5b0640af7f6fcc7bf47e3bd7d1f3b68d5100da50c2f55968b340ac28f4e07bdd"
+  },
+  "initial_source_sha256": {
+    "PBCounterexample.Basic": "cd465f3d85e4a46affbe066adbb46bee037a01d152796f6a9d36c43b9fbff51f",
+    "PBCounterexample.FiniteExpressions": "6618211b1badc14c90756047b31f4ea0eba249cdddc4cf8ab5c69eedd6a57877",
+    "PBCounterexample.Gram6Coordinates": "7bfb0c45e12d1e1b622c35c21c3f92be3c8df41d5464e3edc4c020c7f52937c0",
+    "PBCounterexample.Gram6CorrectionCoordinates": "7a59da12adf0f2ef33ba2e243b503ad6c3215d526553dbf74914b64983622463",
+    "PBCounterexample.Gram6Curve": "57bfed164231e0fb8b2e84e9c2dad41afa36ef2a056ac2e04950574fc59e9367",
+    "PBCounterexample.Gram6DeterminantVariations": "f542669bccbb934209bf28d9ffdb87289c98f864b0996fc330016e870b51fe85",
+    "PBCounterexample.Gram6FiniteParameters": "078717c83016082b05e007060f1adf596348145ad8047c1dcb8c7251b7ea1018",
+    "PBCounterexample.Gram6Function": "112a4571bbd323cbffd97ba68bf782a308aacb22237a4f986d53c44836017ddd",
+    "PBCounterexample.Gram6Implicit": "edd81b3bc85f1ef2c12a80a075b10b50db093dc5e18d9342c43d6f3e22f8a57d",
+    "PBCounterexample.Gram6Kernel": "15afc0ce8222296a84712f871ac442ec86ce189aa91c80b7d245f699adb9868f",
+    "PBCounterexample.Gram6LocalPaths": "589f43afbe187879ae1ef194dd87884b81ac00ab9403c782088b40e3f3cebe2d",
+    "PBCounterexample.Gram6Main": "b4bda82f5f7b93d81968e774f9bbdfbbb45efa92fde5cea7def8feebcb905c57",
+    "PBCounterexample.Gram6MonomialKernel": "3946c98bfa990dc70236291447a08abc3acf3876acf800fe463f3136eff71dfd",
+    "PBCounterexample.Gram6Polarization": "d8b321f03249f57c582393474810836dffd535ec885ae0bc3d496f62f230ca52",
+    "PBCounterexample.Gram6QuadraticCoordinates": "fb3646bf104438faaddfce68528720d028cb4c4a6d1d584aa9ed5d8147835a92",
+    "PBCounterexample.Gram6SignObstruction": "46e9db0c3c1e9951949ece874571513be999a460fefb5f3420fb202a4ec428fd",
+    "PBCounterexample.Gram6Variations": "d0b2f7e0730eb0355b9fb16a3a0a0c820fbe8999a4ad18c461763d458d64ad51",
+    "PBCounterexample.GramSelection": "3b21dc3df57932cf813d58832f6ba2f8818ff576d8e26a9045e7ee2ec1dc0436",
+    "PBCounterexample.Laplacian": "71d0e719ef043ef9f85e380e3643997b04d5c71614f754f04e0af7ad079e9aee",
+    "PBCounterexample.LowDegreeCoordinates": "afc54f359ac2a04db5d91808fe87a8ce3d7bd43015e1459d6b9a0998a44bad84",
+    "PBCounterexample.PolynomialSelection": "9e70439dca9e97e217e998273ef0c694c1ebb088d3b6e2185bd3cb71f211f560",
+    "PBCounterexample.PolynomialSubstitution": "f47be100c44f71417255c1dce1790a918df0a1f3471a41e0540fc57a3b99df86",
+    "PBCounterexample.Quadratic8Data": "29eab13633898fb31216a8dc6a28928019dfb4ddb736056bc8737b52519902a4",
+    "PBCounterexample.Quadratic8Geometry": "d6353e8f8800c49bb9451ca4f8e53c1c824a1d1e69d4d006df120f5f259edcad",
+    "PBCounterexample.Quadratic8Main": "3fe2aec4a9795eef68ca96dba144f8d0dca0f6086189e0b8e57e52dc8093ed8b",
+    "PBCounterexample.Quadratic8Partition": "aba26a6e492f118e1539934fa0aca45b7aac9b290ab92c8dca5b37a8c1b9db63",
+    "PBCounterexample.QuadraticForms": "f99d59f2d7b04123d49bdb9e80f1ae99611fbcb77696c6a28bc60a510eac971b",
+    "PBCounterexample.QuadraticSignPartition": "eed2851b2e47953b86429870ef7e74fe74fc7605a8cf418fcaeec52f5369cadc",
+    "PBCounterexample.Radial": "832604bcd7c351345e072c8511440c8f04a1edbe328e80ed9064b2e014a2c9a2",
+    "PBCounterexample.RadialPolynomial": "0bfd2c597dc7224c7a19073ee543c0bcdf60dfd142b3f99638c0deee8c71f0a1",
+    "PBCounterexample.RadialScalar": "2be80b9cbbc310c2d97244a5535ab6f9636a99d2aecab2c36d1b644f13162bd3",
+    "PBCounterexample.RadialTests": "714b3a3ef56228ec4da7f40ee98ab7081a236214527eea58c60bd27f7827027c",
+    "PBCounterexample.Semialgebraic": "73b50d92f3b5e7262f8cfc7710661c88ca3fd3c6cbea66da3aa80f97b364f10a",
+    "PBCounterexample.SignTopology": "d9ef2afc2cba5fd71de271647871e873f8ee74256acf01571de031d71e8dfff5",
+    "PBCounterexample": "c482d143434eed4dd9bc28bd956cf2ffcd421b9cdd9a6ae343bd14e784256e68"
+  },
+  "modules": {
+    "PBCounterexample.Basic": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Basic.olean",
+        "PBCounterexample/Basic.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 1.8254073469433933,
+      "source_sha256": "cd465f3d85e4a46affbe066adbb46bee037a01d152796f6a9d36c43b9fbff51f",
+      "artifact_sha256": {
+        "PBCounterexample/Basic.olean": "212f0425905e7505bebfd7a2c94a6178abca6c2c784b7ac8d0d388b5ef522565"
+      }
+    },
+    "PBCounterexample.RadialScalar": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/RadialScalar.olean",
+        "PBCounterexample/RadialScalar.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.3066945720929652,
+      "source_sha256": "2be80b9cbbc310c2d97244a5535ab6f9636a99d2aecab2c36d1b644f13162bd3",
+      "artifact_sha256": {
+        "PBCounterexample/RadialScalar.olean": "da3a8425d9258a3eca2a96ee9d1eb9ebfc31ff976680d25786a63ef023ef6be6"
+      }
+    },
+    "PBCounterexample.QuadraticForms": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/QuadraticForms.olean",
+        "PBCounterexample/QuadraticForms.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.5949615470599383,
+      "source_sha256": "f99d59f2d7b04123d49bdb9e80f1ae99611fbcb77696c6a28bc60a510eac971b",
+      "artifact_sha256": {
+        "PBCounterexample/QuadraticForms.olean": "d485030bba20f7b2bbcca8603da5faf56c5ec6226864190eb5177ce16d02aa47"
+      }
+    },
+    "PBCounterexample.FiniteExpressions": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/FiniteExpressions.olean",
+        "PBCounterexample/FiniteExpressions.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 1.80587834212929,
+      "source_sha256": "6618211b1badc14c90756047b31f4ea0eba249cdddc4cf8ab5c69eedd6a57877",
+      "artifact_sha256": {
+        "PBCounterexample/FiniteExpressions.olean": "829a21674b7862e765ab9512658a0b947b44c0fdb40832a38544a100b2028a3a"
+      }
+    },
+    "PBCounterexample.RadialPolynomial": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/RadialPolynomial.olean",
+        "PBCounterexample/RadialPolynomial.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.503522216808051,
+      "source_sha256": "0bfd2c597dc7224c7a19073ee543c0bcdf60dfd142b3f99638c0deee8c71f0a1",
+      "artifact_sha256": {
+        "PBCounterexample/RadialPolynomial.olean": "c6af41e91bc9bdc9f52b6e43458b6758b12c974aa77416c28735ab7b936b0773"
+      }
+    },
+    "PBCounterexample.LowDegreeCoordinates": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/LowDegreeCoordinates.olean",
+        "PBCounterexample/LowDegreeCoordinates.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.1925995650235564,
+      "source_sha256": "afc54f359ac2a04db5d91808fe87a8ce3d7bd43015e1459d6b9a0998a44bad84",
+      "artifact_sha256": {
+        "PBCounterexample/LowDegreeCoordinates.olean": "e79b9ffd4c3ae148d7b6ff3e411579d0e962e73bd16a84cf1dd7b634516a43c0"
+      }
+    },
+    "PBCounterexample.Laplacian": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Laplacian.olean",
+        "PBCounterexample/Laplacian.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.877970662899315,
+      "source_sha256": "71d0e719ef043ef9f85e380e3643997b04d5c71614f754f04e0af7ad079e9aee",
+      "artifact_sha256": {
+        "PBCounterexample/Laplacian.olean": "053470cafb7075dbb3af49a3037513b978b9117e0471837e270d8f328bda98f9"
+      }
+    },
+    "PBCounterexample.Radial": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Radial.olean",
+        "PBCounterexample/Radial.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.4616887751035392,
+      "source_sha256": "832604bcd7c351345e072c8511440c8f04a1edbe328e80ed9064b2e014a2c9a2",
+      "artifact_sha256": {
+        "PBCounterexample/Radial.olean": "d82c2cdabdce6d0e07de6c6ba6e252374e363597550de885ab3f5bdd5b9c97fb"
+      }
+    },
+    "PBCounterexample.SignTopology": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/SignTopology.olean",
+        "PBCounterexample/SignTopology.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.1602033860981464,
+      "source_sha256": "d9ef2afc2cba5fd71de271647871e873f8ee74256acf01571de031d71e8dfff5",
+      "artifact_sha256": {
+        "PBCounterexample/SignTopology.olean": "4af49d3de5aea3bea81a41796878567862aa3785740b0ef272bd9f82452513c9"
+      }
+    },
+    "PBCounterexample.RadialTests": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/RadialTests.olean",
+        "PBCounterexample/RadialTests.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.209203585051,
+      "source_sha256": "714b3a3ef56228ec4da7f40ee98ab7081a236214527eea58c60bd27f7827027c",
+      "artifact_sha256": {
+        "PBCounterexample/RadialTests.olean": "e14902f2ba961c421a98d104cbfcdac5adf28e01616b9578bd9f3746a5af3395"
+      }
+    },
+    "PBCounterexample.Semialgebraic": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Semialgebraic.olean",
+        "PBCounterexample/Semialgebraic.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.649844226194546,
+      "source_sha256": "73b50d92f3b5e7262f8cfc7710661c88ca3fd3c6cbea66da3aa80f97b364f10a",
+      "artifact_sha256": {
+        "PBCounterexample/Semialgebraic.olean": "8413a5e41bacb0c860022efd7ed1a89eb6cd47c9553d1e363324b6184c38b4df"
+      }
+    },
+    "PBCounterexample.PolynomialSubstitution": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/PolynomialSubstitution.olean",
+        "PBCounterexample/PolynomialSubstitution.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.556617314228788,
+      "source_sha256": "f47be100c44f71417255c1dce1790a918df0a1f3471a41e0540fc57a3b99df86",
+      "artifact_sha256": {
+        "PBCounterexample/PolynomialSubstitution.olean": "3b30453a47e5d5d5f6272fe65afb7a12f382563e5ead0a8e992ff4b092eb4eda"
+      }
+    },
+    "PBCounterexample.PolynomialSelection": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/PolynomialSelection.olean",
+        "PBCounterexample/PolynomialSelection.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.722683383151889,
+      "source_sha256": "9e70439dca9e97e217e998273ef0c694c1ebb088d3b6e2185bd3cb71f211f560",
+      "artifact_sha256": {
+        "PBCounterexample/PolynomialSelection.olean": "300d6f3b3dca9962b57b68d854bad0b1df11d07e619f6dcfd6fdf8cf01eabb57"
+      }
+    },
+    "PBCounterexample.GramSelection": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/GramSelection.olean",
+        "PBCounterexample/GramSelection.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.285946726100519,
+      "source_sha256": "3b21dc3df57932cf813d58832f6ba2f8818ff576d8e26a9045e7ee2ec1dc0436",
+      "artifact_sha256": {
+        "PBCounterexample/GramSelection.olean": "d8f0cb5496b5d2fa7f6556a2f128357cf7d7bdec88133814cfd38fffb5ffc52f"
+      }
+    },
+    "PBCounterexample.QuadraticSignPartition": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/QuadraticSignPartition.olean",
+        "PBCounterexample/QuadraticSignPartition.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 9.940140970051289,
+      "source_sha256": "eed2851b2e47953b86429870ef7e74fe74fc7605a8cf418fcaeec52f5369cadc",
+      "artifact_sha256": {
+        "PBCounterexample/QuadraticSignPartition.olean": "5f1d68b3c37036abbed3d7851d934fc46d2e1a5524292857dd9108793c6dc2ce"
+      }
+    },
+    "PBCounterexample.Gram6Coordinates": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6Coordinates.olean",
+        "PBCounterexample/Gram6Coordinates.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 8.051803149050102,
+      "source_sha256": "7bfb0c45e12d1e1b622c35c21c3f92be3c8df41d5464e3edc4c020c7f52937c0",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6Coordinates.olean": "0900ef6207be5933991a88717e1a18ae034b63807f8e95e5d30f31a35dc06a36"
+      }
+    },
+    "PBCounterexample.Gram6Polarization": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6Polarization.olean",
+        "PBCounterexample/Gram6Polarization.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.709479355020449,
+      "source_sha256": "d8b321f03249f57c582393474810836dffd535ec885ae0bc3d496f62f230ca52",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6Polarization.olean": "81b3536e1bed48df8f7263a78093c59bf824eba852efaaccf1a4e9d6a5c6067c"
+      }
+    },
+    "PBCounterexample.Gram6Curve": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6Curve.olean",
+        "PBCounterexample/Gram6Curve.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 9.377346809953451,
+      "source_sha256": "57bfed164231e0fb8b2e84e9c2dad41afa36ef2a056ac2e04950574fc59e9367",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6Curve.olean": "45ff4aca809ee48a6e6fc925937562cebb023df6b30347bb726ae69146fbd1c4"
+      }
+    },
+    "PBCounterexample.Gram6Function": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6Function.olean",
+        "PBCounterexample/Gram6Function.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 10.402269154088572,
+      "source_sha256": "112a4571bbd323cbffd97ba68bf782a308aacb22237a4f986d53c44836017ddd",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6Function.olean": "ba5204e1bad30638010ded7004aefad5a49bb9e9858d36d3134b8db1575e719e"
+      }
+    },
+    "PBCounterexample.Gram6QuadraticCoordinates": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6QuadraticCoordinates.olean",
+        "PBCounterexample/Gram6QuadraticCoordinates.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.220887687057257,
+      "source_sha256": "fb3646bf104438faaddfce68528720d028cb4c4a6d1d584aa9ed5d8147835a92",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6QuadraticCoordinates.olean": "af6374ba8e9cce97138189edb9f6c7500cbab4c2b52252bd1730269593c2a997"
+      }
+    },
+    "PBCounterexample.Quadratic8Geometry": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Quadratic8Geometry.olean",
+        "PBCounterexample/Quadratic8Geometry.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 9.973779581021518,
+      "source_sha256": "d6353e8f8800c49bb9451ca4f8e53c1c824a1d1e69d4d006df120f5f259edcad",
+      "artifact_sha256": {
+        "PBCounterexample/Quadratic8Geometry.olean": "a322e29e21413e2388823f6c96bfda5c86d08356784562132fb71fb52b4e0c4e"
+      }
+    },
+    "PBCounterexample.Gram6Variations": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6Variations.olean",
+        "PBCounterexample/Gram6Variations.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 11.37812748993747,
+      "source_sha256": "d0b2f7e0730eb0355b9fb16a3a0a0c820fbe8999a4ad18c461763d458d64ad51",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6Variations.olean": "aa21a7562372debaea6ff744899849eda55be28dff5868dfe63d89b3ae880586"
+      }
+    },
+    "PBCounterexample.Gram6MonomialKernel": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6MonomialKernel.olean",
+        "PBCounterexample/Gram6MonomialKernel.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.922116342000663,
+      "source_sha256": "3946c98bfa990dc70236291447a08abc3acf3876acf800fe463f3136eff71dfd",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6MonomialKernel.olean": "1bd0deff47b0cdedcb0e2715c47531982f403da119da07e0d4394ce6891e01a3"
+      }
+    },
+    "PBCounterexample.Gram6DeterminantVariations": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6DeterminantVariations.olean",
+        "PBCounterexample/Gram6DeterminantVariations.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.2167618970852345,
+      "source_sha256": "f542669bccbb934209bf28d9ffdb87289c98f864b0996fc330016e870b51fe85",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6DeterminantVariations.olean": "67ce3393486b4984a1f8e961e809756124c2a6ff7b77fbed9735d3b4bd4bafca"
+      }
+    },
+    "PBCounterexample.Gram6CorrectionCoordinates": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6CorrectionCoordinates.olean",
+        "PBCounterexample/Gram6CorrectionCoordinates.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 9.442601423943415,
+      "source_sha256": "7a59da12adf0f2ef33ba2e243b503ad6c3215d526553dbf74914b64983622463",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6CorrectionCoordinates.olean": "be0027e7b71f2d560217270b9dde57003e91dbe1478f33fe5ee5886297a2d023"
+      }
+    },
+    "PBCounterexample.Gram6Kernel": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6Kernel.olean",
+        "PBCounterexample/Gram6Kernel.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 9.204397918889299,
+      "source_sha256": "15afc0ce8222296a84712f871ac442ec86ce189aa91c80b7d245f699adb9868f",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6Kernel.olean": "cebc24ba14690eee16d34eebb4212507599c2b642082471c038703bfc6368ece"
+      }
+    },
+    "PBCounterexample.Gram6Implicit": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6Implicit.olean",
+        "PBCounterexample/Gram6Implicit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 10.22897981503047,
+      "source_sha256": "edd81b3bc85f1ef2c12a80a075b10b50db093dc5e18d9342c43d6f3e22f8a57d",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6Implicit.olean": "3844797d0a045ea05e2eeb1c9dac0521b61465623aa487ec503544e590a2fa47"
+      }
+    },
+    "PBCounterexample.Gram6FiniteParameters": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6FiniteParameters.olean",
+        "PBCounterexample/Gram6FiniteParameters.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.433492138050497,
+      "source_sha256": "078717c83016082b05e007060f1adf596348145ad8047c1dcb8c7251b7ea1018",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6FiniteParameters.olean": "c4a7db6c99213cf2e1964a0169fa4d52102b882d1e3d0ad0c39937eaac83bbdf"
+      }
+    },
+    "PBCounterexample.Gram6LocalPaths": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6LocalPaths.olean",
+        "PBCounterexample/Gram6LocalPaths.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 8.760380676947534,
+      "source_sha256": "589f43afbe187879ae1ef194dd87884b81ac00ab9403c782088b40e3f3cebe2d",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6LocalPaths.olean": "727cd81e42b93cdc7265011129d162dc68889259c51805484e730786fdd11d37"
+      }
+    },
+    "PBCounterexample.Gram6SignObstruction": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6SignObstruction.olean",
+        "PBCounterexample/Gram6SignObstruction.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.991131118033081,
+      "source_sha256": "46e9db0c3c1e9951949ece874571513be999a460fefb5f3420fb202a4ec428fd",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6SignObstruction.olean": "79fe0ed002a91f94482b6d0b318bf4887cb65edc75a0f0f2540a53fdc32e5522"
+      }
+    },
+    "PBCounterexample.Gram6Main": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Gram6Main.olean",
+        "PBCounterexample/Gram6Main.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.307558646891266,
+      "source_sha256": "b4bda82f5f7b93d81968e774f9bbdfbbb45efa92fde5cea7def8feebcb905c57",
+      "artifact_sha256": {
+        "PBCounterexample/Gram6Main.olean": "a59a71da48210081662edb6c50c1be666c3a87ca5e66b038277e9ce49d9d4adb"
+      }
+    },
+    "PBCounterexample.Quadratic8Data": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Quadratic8Data.olean",
+        "PBCounterexample/Quadratic8Data.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.025103834923357,
+      "source_sha256": "29eab13633898fb31216a8dc6a28928019dfb4ddb736056bc8737b52519902a4",
+      "artifact_sha256": {
+        "PBCounterexample/Quadratic8Data.olean": "1a77e28d7da6c11bc618548f41aa3c1d71bf9003843ffeb524311435f78bc2c0"
+      }
+    },
+    "PBCounterexample.Quadratic8Partition": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Quadratic8Partition.olean",
+        "PBCounterexample/Quadratic8Partition.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.552257074974477,
+      "source_sha256": "aba26a6e492f118e1539934fa0aca45b7aac9b290ab92c8dca5b37a8c1b9db63",
+      "artifact_sha256": {
+        "PBCounterexample/Quadratic8Partition.olean": "0c734b850026b81c66c1795684d99176a2322786286b0cc559a19ba45c7d356e"
+      }
+    },
+    "PBCounterexample.Quadratic8Main": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample/Quadratic8Main.olean",
+        "PBCounterexample/Quadratic8Main.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.323068268131465,
+      "source_sha256": "3fe2aec4a9795eef68ca96dba144f8d0dca0f6086189e0b8e57e52dc8093ed8b",
+      "artifact_sha256": {
+        "PBCounterexample/Quadratic8Main.olean": "8d7cefa387377e4e7d18f7fcde66d7246887d193c850750f00b6c2c0a82748ff"
+      }
+    },
+    "PBCounterexample": {
+      "command": [
+        "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+        "--trust=0",
+        "--root=.",
+        "-o",
+        "/tmp/pb8-1655216.1Zr6aP/final01.2eTBg9/.lake/build/lib/lean/PBCounterexample.olean",
+        "PBCounterexample.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.072486362885684,
+      "source_sha256": "c482d143434eed4dd9bc28bd956cf2ffcd421b9cdd9a6ae343bd14e784256e68",
+      "artifact_sha256": {
+        "PBCounterexample.olean": "07dbb5f9a72a980b0cb651fc2d6b9da50facb5eeaf4e5e3e16d304f1b5e6d828"
+      }
+    }
+  },
+  "all_project_artifact_sha256": {
+    "PBCounterexample/Basic.olean": "212f0425905e7505bebfd7a2c94a6178abca6c2c784b7ac8d0d388b5ef522565",
+    "PBCounterexample/FiniteExpressions.olean": "829a21674b7862e765ab9512658a0b947b44c0fdb40832a38544a100b2028a3a",
+    "PBCounterexample/Gram6Coordinates.olean": "0900ef6207be5933991a88717e1a18ae034b63807f8e95e5d30f31a35dc06a36",
+    "PBCounterexample/Gram6CorrectionCoordinates.olean": "be0027e7b71f2d560217270b9dde57003e91dbe1478f33fe5ee5886297a2d023",
+    "PBCounterexample/Gram6Curve.olean": "45ff4aca809ee48a6e6fc925937562cebb023df6b30347bb726ae69146fbd1c4",
+    "PBCounterexample/Gram6DeterminantVariations.olean": "67ce3393486b4984a1f8e961e809756124c2a6ff7b77fbed9735d3b4bd4bafca",
+    "PBCounterexample/Gram6FiniteParameters.olean": "c4a7db6c99213cf2e1964a0169fa4d52102b882d1e3d0ad0c39937eaac83bbdf",
+    "PBCounterexample/Gram6Function.olean": "ba5204e1bad30638010ded7004aefad5a49bb9e9858d36d3134b8db1575e719e",
+    "PBCounterexample/Gram6Implicit.olean": "3844797d0a045ea05e2eeb1c9dac0521b61465623aa487ec503544e590a2fa47",
+    "PBCounterexample/Gram6Kernel.olean": "cebc24ba14690eee16d34eebb4212507599c2b642082471c038703bfc6368ece",
+    "PBCounterexample/Gram6LocalPaths.olean": "727cd81e42b93cdc7265011129d162dc68889259c51805484e730786fdd11d37",
+    "PBCounterexample/Gram6Main.olean": "a59a71da48210081662edb6c50c1be666c3a87ca5e66b038277e9ce49d9d4adb",
+    "PBCounterexample/Gram6MonomialKernel.olean": "1bd0deff47b0cdedcb0e2715c47531982f403da119da07e0d4394ce6891e01a3",
+    "PBCounterexample/Gram6Polarization.olean": "81b3536e1bed48df8f7263a78093c59bf824eba852efaaccf1a4e9d6a5c6067c",
+    "PBCounterexample/Gram6QuadraticCoordinates.olean": "af6374ba8e9cce97138189edb9f6c7500cbab4c2b52252bd1730269593c2a997",
+    "PBCounterexample/Gram6SignObstruction.olean": "79fe0ed002a91f94482b6d0b318bf4887cb65edc75a0f0f2540a53fdc32e5522",
+    "PBCounterexample/Gram6Variations.olean": "aa21a7562372debaea6ff744899849eda55be28dff5868dfe63d89b3ae880586",
+    "PBCounterexample/GramSelection.olean": "d8f0cb5496b5d2fa7f6556a2f128357cf7d7bdec88133814cfd38fffb5ffc52f",
+    "PBCounterexample/Laplacian.olean": "053470cafb7075dbb3af49a3037513b978b9117e0471837e270d8f328bda98f9",
+    "PBCounterexample/LowDegreeCoordinates.olean": "e79b9ffd4c3ae148d7b6ff3e411579d0e962e73bd16a84cf1dd7b634516a43c0",
+    "PBCounterexample/PolynomialSelection.olean": "300d6f3b3dca9962b57b68d854bad0b1df11d07e619f6dcfd6fdf8cf01eabb57",
+    "PBCounterexample/PolynomialSubstitution.olean": "3b30453a47e5d5d5f6272fe65afb7a12f382563e5ead0a8e992ff4b092eb4eda",
+    "PBCounterexample/Quadratic8Data.olean": "1a77e28d7da6c11bc618548f41aa3c1d71bf9003843ffeb524311435f78bc2c0",
+    "PBCounterexample/Quadratic8Geometry.olean": "a322e29e21413e2388823f6c96bfda5c86d08356784562132fb71fb52b4e0c4e",
+    "PBCounterexample/Quadratic8Main.olean": "8d7cefa387377e4e7d18f7fcde66d7246887d193c850750f00b6c2c0a82748ff",
+    "PBCounterexample/Quadratic8Partition.olean": "0c734b850026b81c66c1795684d99176a2322786286b0cc559a19ba45c7d356e",
+    "PBCounterexample/QuadraticForms.olean": "d485030bba20f7b2bbcca8603da5faf56c5ec6226864190eb5177ce16d02aa47",
+    "PBCounterexample/QuadraticSignPartition.olean": "5f1d68b3c37036abbed3d7851d934fc46d2e1a5524292857dd9108793c6dc2ce",
+    "PBCounterexample/Radial.olean": "d82c2cdabdce6d0e07de6c6ba6e252374e363597550de885ab3f5bdd5b9c97fb",
+    "PBCounterexample/RadialPolynomial.olean": "c6af41e91bc9bdc9f52b6e43458b6758b12c974aa77416c28735ab7b936b0773",
+    "PBCounterexample/RadialScalar.olean": "da3a8425d9258a3eca2a96ee9d1eb9ebfc31ff976680d25786a63ef023ef6be6",
+    "PBCounterexample/RadialTests.olean": "e14902f2ba961c421a98d104cbfcdac5adf28e01616b9578bd9f3746a5af3395",
+    "PBCounterexample/Semialgebraic.olean": "8413a5e41bacb0c860022efd7ed1a89eb6cd47c9553d1e363324b6184c38b4df",
+    "PBCounterexample/SignTopology.olean": "4af49d3de5aea3bea81a41796878567862aa3785740b0ef272bd9f82452513c9",
+    "PBCounterexample.olean": "07dbb5f9a72a980b0cb651fc2d6b9da50facb5eeaf4e5e3e16d304f1b5e6d828"
+  },
+  "final_source_sha256": {
+    "PBCounterexample.Basic": "cd465f3d85e4a46affbe066adbb46bee037a01d152796f6a9d36c43b9fbff51f",
+    "PBCounterexample.FiniteExpressions": "6618211b1badc14c90756047b31f4ea0eba249cdddc4cf8ab5c69eedd6a57877",
+    "PBCounterexample.Gram6Coordinates": "7bfb0c45e12d1e1b622c35c21c3f92be3c8df41d5464e3edc4c020c7f52937c0",
+    "PBCounterexample.Gram6CorrectionCoordinates": "7a59da12adf0f2ef33ba2e243b503ad6c3215d526553dbf74914b64983622463",
+    "PBCounterexample.Gram6Curve": "57bfed164231e0fb8b2e84e9c2dad41afa36ef2a056ac2e04950574fc59e9367",
+    "PBCounterexample.Gram6DeterminantVariations": "f542669bccbb934209bf28d9ffdb87289c98f864b0996fc330016e870b51fe85",
+    "PBCounterexample.Gram6FiniteParameters": "078717c83016082b05e007060f1adf596348145ad8047c1dcb8c7251b7ea1018",
+    "PBCounterexample.Gram6Function": "112a4571bbd323cbffd97ba68bf782a308aacb22237a4f986d53c44836017ddd",
+    "PBCounterexample.Gram6Implicit": "edd81b3bc85f1ef2c12a80a075b10b50db093dc5e18d9342c43d6f3e22f8a57d",
+    "PBCounterexample.Gram6Kernel": "15afc0ce8222296a84712f871ac442ec86ce189aa91c80b7d245f699adb9868f",
+    "PBCounterexample.Gram6LocalPaths": "589f43afbe187879ae1ef194dd87884b81ac00ab9403c782088b40e3f3cebe2d",
+    "PBCounterexample.Gram6Main": "b4bda82f5f7b93d81968e774f9bbdfbbb45efa92fde5cea7def8feebcb905c57",
+    "PBCounterexample.Gram6MonomialKernel": "3946c98bfa990dc70236291447a08abc3acf3876acf800fe463f3136eff71dfd",
+    "PBCounterexample.Gram6Polarization": "d8b321f03249f57c582393474810836dffd535ec885ae0bc3d496f62f230ca52",
+    "PBCounterexample.Gram6QuadraticCoordinates": "fb3646bf104438faaddfce68528720d028cb4c4a6d1d584aa9ed5d8147835a92",
+    "PBCounterexample.Gram6SignObstruction": "46e9db0c3c1e9951949ece874571513be999a460fefb5f3420fb202a4ec428fd",
+    "PBCounterexample.Gram6Variations": "d0b2f7e0730eb0355b9fb16a3a0a0c820fbe8999a4ad18c461763d458d64ad51",
+    "PBCounterexample.GramSelection": "3b21dc3df57932cf813d58832f6ba2f8818ff576d8e26a9045e7ee2ec1dc0436",
+    "PBCounterexample.Laplacian": "71d0e719ef043ef9f85e380e3643997b04d5c71614f754f04e0af7ad079e9aee",
+    "PBCounterexample.LowDegreeCoordinates": "afc54f359ac2a04db5d91808fe87a8ce3d7bd43015e1459d6b9a0998a44bad84",
+    "PBCounterexample.PolynomialSelection": "9e70439dca9e97e217e998273ef0c694c1ebb088d3b6e2185bd3cb71f211f560",
+    "PBCounterexample.PolynomialSubstitution": "f47be100c44f71417255c1dce1790a918df0a1f3471a41e0540fc57a3b99df86",
+    "PBCounterexample.Quadratic8Data": "29eab13633898fb31216a8dc6a28928019dfb4ddb736056bc8737b52519902a4",
+    "PBCounterexample.Quadratic8Geometry": "d6353e8f8800c49bb9451ca4f8e53c1c824a1d1e69d4d006df120f5f259edcad",
+    "PBCounterexample.Quadratic8Main": "3fe2aec4a9795eef68ca96dba144f8d0dca0f6086189e0b8e57e52dc8093ed8b",
+    "PBCounterexample.Quadratic8Partition": "aba26a6e492f118e1539934fa0aca45b7aac9b290ab92c8dca5b37a8c1b9db63",
+    "PBCounterexample.QuadraticForms": "f99d59f2d7b04123d49bdb9e80f1ae99611fbcb77696c6a28bc60a510eac971b",
+    "PBCounterexample.QuadraticSignPartition": "eed2851b2e47953b86429870ef7e74fe74fc7605a8cf418fcaeec52f5369cadc",
+    "PBCounterexample.Radial": "832604bcd7c351345e072c8511440c8f04a1edbe328e80ed9064b2e014a2c9a2",
+    "PBCounterexample.RadialPolynomial": "0bfd2c597dc7224c7a19073ee543c0bcdf60dfd142b3f99638c0deee8c71f0a1",
+    "PBCounterexample.RadialScalar": "2be80b9cbbc310c2d97244a5535ab6f9636a99d2aecab2c36d1b644f13162bd3",
+    "PBCounterexample.RadialTests": "714b3a3ef56228ec4da7f40ee98ab7081a236214527eea58c60bd27f7827027c",
+    "PBCounterexample.Semialgebraic": "73b50d92f3b5e7262f8cfc7710661c88ca3fd3c6cbea66da3aa80f97b364f10a",
+    "PBCounterexample.SignTopology": "d9ef2afc2cba5fd71de271647871e873f8ee74256acf01571de031d71e8dfff5",
+    "PBCounterexample": "c482d143434eed4dd9bc28bd956cf2ffcd421b9cdd9a6ae343bd14e784256e68"
+  },
+  "success": true
+}

@@ -1,0 +1,71 @@
+BUILD_START PBCounterexample.Basic
+BUILD_START PBCounterexample.Laplacian
+BUILD_START PBCounterexample.QuadraticForms
+BUILD_START PBCounterexample.RadialScalar
+BUILD_END PBCounterexample.Basic EXIT=0
+BUILD_START PBCounterexample.FiniteExpressions
+BUILD_END PBCounterexample.RadialScalar EXIT=0
+BUILD_START PBCounterexample.RadialPolynomial
+BUILD_END PBCounterexample.QuadraticForms EXIT=0
+BUILD_START PBCounterexample.LowDegreeCoordinates
+BUILD_END PBCounterexample.FiniteExpressions EXIT=0
+BUILD_START PBCounterexample.Semialgebraic
+BUILD_END PBCounterexample.RadialPolynomial EXIT=0
+BUILD_START PBCounterexample.Radial
+BUILD_END PBCounterexample.LowDegreeCoordinates EXIT=0
+BUILD_START PBCounterexample.SignTopology
+BUILD_END PBCounterexample.Laplacian EXIT=0
+BUILD_END PBCounterexample.Radial EXIT=0
+BUILD_START PBCounterexample.RadialTests
+BUILD_END PBCounterexample.SignTopology EXIT=0
+BUILD_END PBCounterexample.RadialTests EXIT=0
+BUILD_END PBCounterexample.Semialgebraic EXIT=0
+BUILD_START PBCounterexample.PolynomialSelection
+BUILD_START PBCounterexample.PolynomialSubstitution
+BUILD_END PBCounterexample.PolynomialSubstitution EXIT=0
+BUILD_END PBCounterexample.PolynomialSelection EXIT=0
+BUILD_START PBCounterexample.GramSelection
+BUILD_START PBCounterexample.QuadraticSignPartition
+BUILD_END PBCounterexample.GramSelection EXIT=0
+BUILD_START PBCounterexample.Gram6Coordinates
+BUILD_END PBCounterexample.QuadraticSignPartition EXIT=0
+BUILD_END PBCounterexample.Gram6Coordinates EXIT=0
+BUILD_START PBCounterexample.Gram6Curve
+BUILD_START PBCounterexample.Gram6Function
+BUILD_START PBCounterexample.Gram6Polarization
+BUILD_END PBCounterexample.Gram6Polarization EXIT=0
+BUILD_END PBCounterexample.Gram6Curve EXIT=0
+BUILD_START PBCounterexample.Gram6QuadraticCoordinates
+BUILD_START PBCounterexample.Gram6Variations
+BUILD_END PBCounterexample.Gram6Function EXIT=0
+BUILD_START PBCounterexample.Quadratic8Geometry
+BUILD_END PBCounterexample.Gram6QuadraticCoordinates EXIT=0
+BUILD_START PBCounterexample.Gram6MonomialKernel
+BUILD_END PBCounterexample.Quadratic8Geometry EXIT=0
+BUILD_END PBCounterexample.Gram6Variations EXIT=0
+BUILD_START PBCounterexample.Gram6CorrectionCoordinates
+BUILD_START PBCounterexample.Gram6DeterminantVariations
+BUILD_END PBCounterexample.Gram6MonomialKernel EXIT=0
+BUILD_START PBCounterexample.Gram6Kernel
+BUILD_END PBCounterexample.Gram6DeterminantVariations EXIT=0
+BUILD_END PBCounterexample.Gram6CorrectionCoordinates EXIT=0
+BUILD_START PBCounterexample.Gram6Implicit
+BUILD_END PBCounterexample.Gram6Kernel EXIT=0
+BUILD_START PBCounterexample.Gram6FiniteParameters
+BUILD_END PBCounterexample.Gram6Implicit EXIT=0
+BUILD_START PBCounterexample.Gram6LocalPaths
+BUILD_END PBCounterexample.Gram6FiniteParameters EXIT=0
+BUILD_END PBCounterexample.Gram6LocalPaths EXIT=0
+BUILD_START PBCounterexample.Gram6SignObstruction
+BUILD_END PBCounterexample.Gram6SignObstruction EXIT=0
+BUILD_START PBCounterexample.Gram6Main
+BUILD_END PBCounterexample.Gram6Main EXIT=0
+BUILD_START PBCounterexample.Quadratic8Data
+BUILD_END PBCounterexample.Quadratic8Data EXIT=0
+BUILD_START PBCounterexample.Quadratic8Partition
+BUILD_END PBCounterexample.Quadratic8Partition EXIT=0
+BUILD_START PBCounterexample.Quadratic8Main
+BUILD_END PBCounterexample.Quadratic8Main EXIT=0
+BUILD_START PBCounterexample
+BUILD_END PBCounterexample EXIT=0
+FRESH_PROJECT_SOURCE_BUILD_OK modules=35

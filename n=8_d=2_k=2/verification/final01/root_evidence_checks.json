@@ -1,0 +1,23 @@
+{
+  "manifest_sha256": "eb494b5e11b32911665223d96bc647d22757b4fbe50cfc3f753332575fcd82cc",
+  "manifest_entries": 47,
+  "mathematical_modules": 34,
+  "compiled_modules_including_wrapper": 35,
+  "safe_project_roots": 926,
+  "replayed_dependency_constants": 37598,
+  "stored_proof_variants": 1,
+  "raw_negative_controls": 57,
+  "kernel_negative_controls": 2,
+  "emitted_artifacts": 35,
+  "compiler": {
+    "executable": "/tmp/pb8-1655216.1Zr6aP/toolchain/bin/lean",
+    "executable_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "version": "Lean (version 4.34.0-rc1, x86_64-unknown-linux-gnu, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)\n",
+    "lean_toolchain": "leanprover/lean4:v4.34.0-rc1\n",
+    "sysroot": "/tmp/pb8-1655216.1Zr6aP/toolchain",
+    "shared_library_sha256": "5b0640af7f6fcc7bf47e3bd7d1f3b68d5100da50c2f55968b340ac28f4e07bdd"
+  },
+  "task_sha256": "d3d0e1254d0b659f79a284fe22e3c9031a146a71781327ba50cfe50b6116f577",
+  "trust_log_sha256": "831652683dbbc4ec7e9d3fbbb120d6b980c14951feeb02116df9fa7fc84f11d4",
+  "status": "accepted after root checks and independent semantic, build, and trust reviews"
+}

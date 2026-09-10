@@ -1,0 +1,6 @@
+PBCounterexample/Laplacian.lean:14:0: warning: automatically included section variable(s) unused in theorem `PBCounterexample.Laplacian.sum_squared_differences`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`

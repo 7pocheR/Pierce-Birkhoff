@@ -1,0 +1,34 @@
+PBCounterexample/Gram6MonomialKernel.lean:18:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PBCounterexample/Gram6MonomialKernel.lean:24:13: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PBCounterexample/Gram6MonomialKernel.lean:90:15: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+PBCounterexample/Gram6MonomialKernel.lean:90:15: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+PBCounterexample/Gram6MonomialKernel.lean:96:11: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PBCounterexample/Gram6MonomialKernel.lean:102:11: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PBCounterexample/Gram6MonomialKernel.lean:108:11: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PBCounterexample/Gram6MonomialKernel.lean:114:11: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PBCounterexample/Gram6MonomialKernel.lean:120:11: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PBCounterexample/Gram6MonomialKernel.lean:126:11: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

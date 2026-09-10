@@ -1,0 +1,2 @@
+PBCounterexample/Gram6LocalPaths.lean:142:34: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+PBCounterexample/Gram6LocalPaths.lean:147:34: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead

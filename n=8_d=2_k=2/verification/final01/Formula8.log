@@ -1,0 +1,5 @@
+'Quadratic8FormulaAudit.function_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Quadratic8FormulaAudit.literal_function_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Quadratic8FormulaAudit.literal_function_not_polynomial_lattice' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

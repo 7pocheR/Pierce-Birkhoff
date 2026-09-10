@@ -1,0 +1,18 @@
+PBCounterexample.Quadratic8.whole_space_counterexample :
+  Continuous f ∧
+    (∃ P, P.count = 137) ∧
+      (∃ C, C.count = 17 ∧ ∀ (i : Fin C.count), (C.label i).totalDegree ≤ 2) ∧ ¬IsPolynomialLattice f
+PBCounterexample.Quadratic8.exists_whole_space_counterexample :
+  ∃ g,
+    Continuous g ∧
+      (∃ P, P.count = 137) ∧
+        (∃ C, C.count = 17 ∧ ∀ (i : Fin C.count), (C.label i).totalDegree ≤ 2) ∧ ¬IsPolynomialLattice g
+'PBCounterexample.Quadratic8.whole_space_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PBCounterexample.Quadratic8.exists_whole_space_counterexample' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PBCounterexample.Quadratic8.not_finite_sup_inf_polynomials' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PBCounterexample.Quadratic8Geometry.determinant_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PBCounterexample.Quadratic8.agrees_on_entire_sign_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
